@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chris81051.github.io/2022/04/28/%E6%95%99%E5%AD%B8-%E8%A9%A6%E8%91%97%E6%9E%B6%E7%AB%99-Hexo-%E9%81%87%E5%88%B0-ERROR-Try-running-rm-rf-node-modules-npm-install-force/</loc>
+    <loc>https://chris81051.github.io/2022/04/28/%E6%95%99%E5%AD%B8-%E6%9E%B6%E7%AB%99-Hexo-%E9%81%87%E5%88%B0-ERROR-Try-running-rm-rf-node-modules-npm-install-force/</loc>
     
-    <lastmod>2022-04-30</lastmod>
+    <lastmod>2022-05-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,7 +49,7 @@
 
   <url>
     <loc>https://chris81051.github.io/</loc>
-    <lastmod>2022-04-30</lastmod>
+    <lastmod>2022-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -59,7 +59,7 @@
   
   <url>
     <loc>https://chris81051.github.io/categories/Hexo/</loc>
-    <lastmod>2022-04-30</lastmod>
+    <lastmod>2022-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
