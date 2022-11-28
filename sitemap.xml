@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chris81051.github.io/about/index.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chris81051.github.io/categories/index.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chris81051.github.io/2022/11/23/%E6%95%99%E5%AD%B8-Hexo-Next-%E4%B8%BB%E9%A1%8C%E5%8A%A0%E5%85%A5-Disqus-%E7%95%99%E8%A8%80%E6%9D%BF/</loc>
     
     <lastmod>2022-11-23</lastmod>
@@ -20,27 +38,9 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/about/index.html</loc>
-    
-    <lastmod>2022-11-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chris81051.github.io/Privacy-Policy/index.html</loc>
     
     <lastmod>2022-11-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chris81051.github.io/categories/index.html</loc>
-    
-    <lastmod>2022-05-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
