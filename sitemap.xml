@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chris81051.github.io/about/index.html</loc>
+    
+    <lastmod>2023-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chris81051.github.io/2023/04/04/Vue-element-Spring-Boot-picture-form-base64-upload/</loc>
     
     <lastmod>2023-04-05</lastmod>
@@ -14,15 +23,6 @@
     <loc>https://chris81051.github.io/2022/11/23/tutorial-Hexo-Next-theme-join-Disqus-message-board/</loc>
     
     <lastmod>2023-04-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chris81051.github.io/about/index.html</loc>
-    
-    <lastmod>2023-02-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
