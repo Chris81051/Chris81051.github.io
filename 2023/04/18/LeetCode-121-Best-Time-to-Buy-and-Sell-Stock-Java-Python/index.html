@@ -37,7 +37,7 @@
 <meta property="og:description" content="究竟何時才是買賣股票的最好時機呢?">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-04-18T08:51:34.000Z">
-<meta property="article:modified_time" content="2023-04-18T09:38:40.215Z">
+<meta property="article:modified_time" content="2023-04-18T09:50:43.156Z">
 <meta property="article:author" content="Chris">
 <meta property="article:tag" content="前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,Java,JavaScript,HTML,CSS,SCSS">
 <meta name="twitter:card" content="summary">
@@ -308,7 +308,7 @@
 </blockquote>
 <h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxProfit</span><span class="params">(<span class="type">int</span>[] prices)</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> Integer.MAX_VALUE;  <span class="comment">// 整數類型中的最大值 2³¹</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">op</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">pist</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; prices.length; i++)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 找到陣列中最小的值</span></span><br><span class="line">            <span class="keyword">if</span>(prices[i] &lt; min)&#123;</span><br><span class="line">                min = prices[i]; <span class="comment">// 前一個索引的值(最小的值)</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 兩數的相差 = 當前索引的值 - 前一個索引的值(最小的值)</span></span><br><span class="line">            pist = prices[i] - min;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 比較前一個最小的值，將最小的值存入</span></span><br><span class="line">            <span class="keyword">if</span>(op &lt; pist)&#123;  </span><br><span class="line">                op = pist;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> op;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># (待續)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># (待續)</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table>
 <thead>
@@ -324,7 +324,7 @@
 <td>59.4MB</td>
 </tr>
 <tr>
-<td></td>
+<td>Python</td>
 <td></td>
 <td></td>
 </tr>
