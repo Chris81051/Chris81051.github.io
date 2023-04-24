@@ -1,6 +1,7 @@
+https://chris81051.github.io/2023/04/23/LeetCode-169-Majority-Element-Java-Python/
+https://chris81051.github.io/about/index.html
 https://chris81051.github.io/2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/
 https://chris81051.github.io/2023/04/14/LeetCode-1-Two-Sum-Java-Python/
-https://chris81051.github.io/about/index.html
 https://chris81051.github.io/2023/04/04/Vue-element-Spring-Boot-picture-form-base64-upload/
 https://chris81051.github.io/2022/11/23/tutorial-Hexo-Next-theme-join-Disqus-message-board/
 https://chris81051.github.io/2022/04/28/%E6%95%99%E5%AD%B8-%E6%9E%B6%E7%AB%99-Hexo-%E9%81%87%E5%88%B0-ERROR-Try-running-rm-rf-node-modules-npm-install-force/
@@ -11,7 +12,7 @@ https://chris81051.github.io/tags/index.html
 https://chris81051.github.io/project/index.html
 https://chris81051.github.io/
 https://chris81051.github.io/categories/LeetCode/
-https://chris81051.github.io/categories/Spring-Boot/
-https://chris81051.github.io/categories/LeetCode/Array/
 https://chris81051.github.io/categories/Hexo/
+https://chris81051.github.io/categories/LeetCode/Array/
+https://chris81051.github.io/categories/Spring-Boot/
 https://chris81051.github.io/categories/LeetCode/Array/Easy/
