@@ -37,7 +37,7 @@
 <meta property="og:description" content="如何找出單獨的那個數呢?">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-04-28T04:47:39.000Z">
-<meta property="article:modified_time" content="2023-04-28T06:42:00.185Z">
+<meta property="article:modified_time" content="2023-04-28T07:52:48.751Z">
 <meta property="article:author" content="Chris">
 <meta property="article:tag" content="前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,Java,JavaScript,HTML,CSS,SCSS">
 <meta name="twitter:card" content="summary">
@@ -315,7 +315,7 @@
 <h3 id="JAVA-初階實現"><a href="#JAVA-初階實現" class="headerlink" title="JAVA 初階實現"></a>JAVA 初階實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">singleNumber</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        Map&lt;Integer, Integer&gt; isMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Integer, Integer&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// foreach 寫法，類型 int 遍歷後把 nums 裡的每個值丟進 num</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!isMap.containsKey(num)) &#123; <span class="comment">// 判斷有無這個元素</span></span><br><span class="line">                isMap.put(num, <span class="number">1</span>); <span class="comment">// 放進 Map，元素為 Key、整數為 Value</span></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                isMap.put(num, isMap.get(num)+<span class="number">1</span>); <span class="comment">// 當前的元素的整數 Value +1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 遍歷 Map 判斷裡面的元素的整數 Value == 1</span></span><br><span class="line">        <span class="keyword">for</span> (Integer key: isMap.keySet())&#123; <span class="comment">// 取得 Key</span></span><br><span class="line">			<span class="comment">// 遍歷 Map 判斷裡面的 Key 的 Value &lt; 2</span></span><br><span class="line">            <span class="keyword">if</span>(isMap.get(key) &lt; <span class="number">2</span>)&#123;</span><br><span class="line">                <span class="type">return</span> <span class="variable">result</span> <span class="operator">=</span> key; <span class="comment">// 就回傳 Key</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="JAVA-進階實現"><a href="#JAVA-進階實現" class="headerlink" title="JAVA 進階實現"></a>JAVA 進階實現</h3><p>筆者還在學習中，參考了討論區裡網友的解法，這個技巧比較特別，有點偏向數學題目。</p>
-<p>這裡會使用到邏輯運算 XOR，位元運算的特性，數學的交換率。</p>
+<p>這裡會使用到邏輯運算 XOR，位元運算的特性，數學的交換律。</p>
 <p>了解以下說明，步驟會很明瞭，運用數學交換律來排序後，新的排序會從小排到大而且一樣的整數會倆倆相鄰，然後已知的兩整數用邏輯運算後相不相同表示 0 或 1，得出最後無法被削除的整數是 4。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">邏輯運算 XOR</span><br><span class="line"></span><br><span class="line">將倆正整數都轉成 binay 後再進行比較，那雙方的 binay 是一樣的話為 <span class="number">0</span>，不一樣的話為 <span class="number">1</span>。(覺得複雜難理解的話可看下方算式)</span><br><span class="line">每個位元會分開算</span><br><span class="line"><span class="type">int</span> <span class="number">4</span> =&gt; binay <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000100</span></span><br><span class="line"><span class="type">int</span> <span class="number">1</span> =&gt; binay <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000001</span></span><br><span class="line">---------------------------------------------------------</span><br><span class="line">               <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000101</span>   =&gt; <span class="number">5</span></span><br><span class="line">所以 <span class="number">4</span> ^ <span class="number">1</span> = <span class="number">5</span></span><br></pre></td></tr></table></figure>
 
@@ -366,7 +366,10 @@
     <a href="/2023/04/23/LeetCode-169-Majority-Element-Java-Python/" rel="prev" title="[LeetCode] 169. Majority Element">
       <i class="fa fa-chevron-left"></i> [LeetCode] 169. Majority Element
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/" rel="next" title="[LeetCode] 283. Move Zeroes Java Python">
+      [LeetCode] 283. Move Zeroes Java Python <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -448,7 +451,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
