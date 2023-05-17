@@ -1,3 +1,4 @@
+https://chris81051.github.io/2023/05/17/LeetCode-35-Search-Insert-Position-Java-Python/
 https://chris81051.github.io/about/index.html
 https://chris81051.github.io/2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/
 https://chris81051.github.io/2023/04/28/LeetCode-136-Single-Number-Java-Python/
@@ -16,5 +17,5 @@ https://chris81051.github.io/
 https://chris81051.github.io/categories/LeetCode/
 https://chris81051.github.io/categories/LeetCode/Array/
 https://chris81051.github.io/categories/Hexo/
-https://chris81051.github.io/categories/Spring-Boot/
 https://chris81051.github.io/categories/LeetCode/Array/Easy/
+https://chris81051.github.io/categories/Spring-Boot/
