@@ -29,20 +29,20 @@
 
   gtag('config', 'G-DQ8D0CJFGG');
 </script>
-  <meta name="description" content="不配置新的輔助 Array 空間，來移動陣列元素重新排序">
+  <meta name="description" content="這題用的技巧是二分搜尋法，原理是每次循環都會將搜索範圍縮小一半。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 283. Move Zeroes">
-<meta property="og:url" content="https://chris81051.github.io/2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/index.html">
+<meta property="og:title" content="[LeetCode] 704. Binary Search">
+<meta property="og:url" content="https://chris81051.github.io/2023/05/29/LeetCode-704-Binary-Search-Java-Python/index.html">
 <meta property="og:site_name" content="Chris&#39;s Lab">
-<meta property="og:description" content="不配置新的輔助 Array 空間，來移動陣列元素重新排序">
+<meta property="og:description" content="這題用的技巧是二分搜尋法，原理是每次循環都會將搜索範圍縮小一半。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-05-05T07:03:14.000Z">
-<meta property="article:modified_time" content="2023-05-05T07:16:49.501Z">
+<meta property="article:published_time" content="2023-05-29T07:39:18.000Z">
+<meta property="article:modified_time" content="2023-05-29T07:42:10.644Z">
 <meta property="article:author" content="Chris">
 <meta property="article:tag" content="前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,Java,JavaScript,HTML,CSS,SCSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chris81051.github.io/2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/">
+<link rel="canonical" href="https://chris81051.github.io/2023/05/29/LeetCode-704-Binary-Search-Java-Python/">
 
 
 <script id="page-configurations">
@@ -55,7 +55,7 @@
   };
 </script>
 
-  <title>[LeetCode] 283. Move Zeroes | Chris's Lab</title>
+  <title>[LeetCode] 704. Binary Search | Chris's Lab</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ8D0CJFGG"></script>
     <script>
@@ -209,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/">
+    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/05/29/LeetCode-704-Binary-Search-Java-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://drive.google.com/uc?export=view&id=1vRmbhAemSAwPDo0DQ7gRulglOxJcJHb9">
@@ -222,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode] 283. Move Zeroes
+          [LeetCode] 704. Binary Search
         </h1>
 
         <div class="post-meta">
@@ -232,7 +232,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2023-05-05 15:03:14" itemprop="dateCreated datePublished" datetime="2023-05-05T15:03:14+08:00">2023-05-05</time>
+              <time title="創建時間：2023-05-29 15:39:18" itemprop="dateCreated datePublished" datetime="2023-05-29T15:39:18+08:00">2023-05-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,13 +268,13 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2023/05/29/LeetCode-704-Binary-Search-Java-Python/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/05/29/LeetCode-704-Binary-Search-Java-Python/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">不配置新的輔助 Array 空間，來移動陣列元素重新排序</div>
+            <div class="post-description">這題用的技巧是二分搜尋法，原理是每次循環都會將搜索範圍縮小一半。</div>
 
         </div>
       </header>
@@ -285,64 +285,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題題目要設法將陣列中的非零元素全部往前移，題目要求不能配置新的空間，所以不能使用輔助的 Array，那我們就由本身的陣列來做循環添加，這是比較簡單的方法，需用到一層迴圈，時間複雜度推估可達 <code>O(n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題用的技巧是二分搜尋法，原理是每次循環都會將搜索範圍縮小一半。演算法通常需要使用二分思想，即每次能夠排除一半的範圍，快速的找出陣列中所要求的元素位置，這樣時間複雜度可達 <code>O(log n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
 <h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><blockquote>
-<p>Given an integer array <strong>nums</strong>, move all <strong>0</strong>‘s to the end of it while maintaining the relative order of the <strong>non-zero</strong> elements.<br><strong>Note</strong> that you must do this in-place without making a copy of the array.</p>
+<p>Given an array of integers <code>nums</code> which is sorted in ascending order, and an integer <code>target</code>, write a function to search <code>target</code> in <code>nums</code>. If <code>target</code> exists, then return its index. Otherwise, return <code>-1</code>.<br>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
 </blockquote>
 <blockquote>
-<p>給定一個整數陣列為 <strong>nums</strong>，移動全部的 <strong>零</strong> 元素到最後面， 同時維持 <strong>非零</strong> 元素的原本順序。<br>注意 你必須在當前陣列做，不能複製一個陣列來做。</p>
+<p>給定一個整數陣列 <code>nums</code> ，這是個上升排序陣列，和一個目標整數 <code>target</code> ，寫一個方法去搜尋在 <code>nums</code> 陣列裡的目標整數 <code>target</code> 。如果目標整數 <code>target</code> 存在就回傳這個索引。否則回傳 <code>-1</code>。<br>你必須寫一個時間複雜度是 <code>O(log n)</code> 的演算法。 </p>
 </blockquote>
-<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/move-zeroes/">https://leetcode.com/problems/move-zeroes/</a></p>
-<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= nums.length &lt;= 104</code><br><code>231 &lt;= nums[i] &lt;= 231 - 1</code></p>
-<p><strong>Follow up:</strong> Could you minimize the total number of operations done?</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">12</span>]</span><br><span class="line">Output: [<span class="number">1</span>,<span class="number">3</span>,<span class="number">12</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-search/">https://leetcode.com/problems/binary-search/</a></p>
+<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= numRows &lt;= 30</code></p>
+<p><code>1 &lt;= nums.length &lt;= 104</code></p>
+<p><code>104 &lt; nums[i], target &lt; 104</code></p>
+<p>All the integers in <code>nums</code> are <strong>unique</strong>.</p>
+<p><code>nums</code> is sorted in ascending order.</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [-<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">12</span>], target = <span class="number">9</span></span><br><span class="line">Output: <span class="number">4</span></span><br><span class="line">Explanation: <span class="number">9</span> exists in nums and its index is <span class="number">4</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">0</span>]</span><br><span class="line">Output: [<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [-<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">12</span>], target = <span class="number">2</span></span><br><span class="line">Output: -<span class="number">1</span></span><br><span class="line">Explanation: <span class="number">2</span> does not exist in nums so <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>題目要求不能配置新的空間，所以不能用輔助的 Array，那我們就由本身陣列來做循環添加。</p>
-<blockquote>
-<ul>
-<li>把非零元素加到當前陣列裡</li>
-<li>從陣列的最前面開始添加，索引從 0 開始 (從陣列的最前面)</li>
-<li>再把當前的陣列後面補 0 即可，索引從 3 開始 (從剛添加完非零元素後面開始)</li>
-</ul>
-</blockquote>
-<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="literal">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span>; <span class="comment">// 防止這個函式會直接回傳傳入的 nums 參數</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">insert</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 把非零元素加到當前陣列裡</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (num != <span class="number">0</span>)&#123;</span><br><span class="line">                nums[insert++] = num; <span class="comment">// 從陣列的最前面開始添加 (注意：元素會先被添加在 nums[insert]裡，之後 insert 才會被 ++)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 再把當前的陣列後面補 0 即可，索引從 3 開始</span></span><br><span class="line">        <span class="keyword">while</span> (insert &lt; nums.length)&#123;</span><br><span class="line">            nums[insert++] = <span class="number">0</span>; <span class="comment">// 添加 0 進去</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>這題用的技巧是二分搜尋法，原理是每次循環都會將搜索範圍縮小一半。</p>
+<ol>
+<li><p>middle &#x3D; start + ( end - start ) &#x2F; 2 可取得中間值</p>
+</li>
+<li><p>找出目標值在中間值的左側還是右側</p>
+</li>
+<li><p>搜索範圍越來越小，直到最後回傳中間值就是答案</p>
+</li>
+</ol>
+<p>[注意點] 之所以要用上述中間值的寫法會比較安全，因如果 start 和 end 趨近於最大數時，兩者相加起來的合可能會造成整數溢位</p>
+<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 起點位置</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> nums.length-<span class="number">1</span>; <span class="comment">// 終點位置</span></span><br><span class="line">        </span><br><span class="line">				<span class="comment">// 進入迴圈</span></span><br><span class="line">        <span class="keyword">while</span> (start &lt;= end )&#123;</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> <span class="variable">middle</span> <span class="operator">=</span> start + (end-start)/<span class="number">2</span>; <span class="comment">// 中間值</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (target &gt; nums[middle])&#123; <span class="comment">// 目標值 &gt; 陣列中間值 </span></span><br><span class="line">                start = middle + <span class="number">1</span>; <span class="comment">// 重新定義起點，下次回圈從新的起點開始就好 (因為目標值一定比自己大，要不包含 middle 自己)</span></span><br><span class="line"></span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[middle])&#123; <span class="comment">// 目標值 &lt; 陣列中間值 </span></span><br><span class="line">                end = middle - <span class="number">1</span>; <span class="comment">// 重新定義終點，下次回圈找到新的終點就好 (因為目標值一定比自己小，要不包含 middle 自己)</span></span><br><span class="line"></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123; <span class="comment">// 目標值 = 陣列中間值</span></span><br><span class="line">                <span class="keyword">return</span> middle; <span class="comment">// 找到答案，回傳中間值索引</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// 沒有這個數回傳 -1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">moveZeroes</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 把非零元素加到當前陣列裡</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i] !=<span class="number">0</span>: <span class="comment"># 不是非 0 元素</span></span><br><span class="line">                nums[pointer] = nums[i]  <span class="comment"># 取得當下元素，放到指定索引裡</span></span><br><span class="line">                pointer += <span class="number">1</span> <span class="comment"># 索引++</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 再把當前的陣列後面補 0 即可，索引從 3 開始</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(pointer, <span class="built_in">len</span>(nums)):</span><br><span class="line">            nums[pointer] = <span class="number">0</span> <span class="comment"># 添加 0 進去</span></span><br><span class="line">            pointer += <span class="number">1</span> <span class="comment"># 索引 ++</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"></span><br><span class="line">        start = <span class="number">0</span> <span class="comment"># 起點</span></span><br><span class="line">        end = <span class="built_in">len</span>(nums)-<span class="number">1</span> <span class="comment"># 終點</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> start &lt;= end:</span><br><span class="line"></span><br><span class="line">						<span class="comment"># 設定中間值</span></span><br><span class="line">            middle = start + (end-start)//<span class="number">2</span>	</span><br><span class="line"></span><br><span class="line">						<span class="comment"># 判斷 target 是否大於</span></span><br><span class="line">            <span class="keyword">if</span> target &gt; nums[middle]:</span><br><span class="line">                start = middle+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">						<span class="comment"># 判斷 target 是否小於</span></span><br><span class="line">            <span class="keyword">elif</span> target &lt; nums[middle]:</span><br><span class="line">                end = middle-<span class="number">1</span></span><br><span class="line"></span><br><span class="line">						<span class="comment"># 判斷 target 是否等於 middle</span></span><br><span class="line">            <span class="keyword">else</span> :</span><br><span class="line">                <span class="keyword">return</span> middle</span><br><span class="line"></span><br><span class="line">				<span class="comment"># 都沒有</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Python-進階實現"><a href="#Python-進階實現" class="headerlink" title="Python 進階實現"></a>Python 進階實現</h3><p>筆者還在學習中，參考了在討論區裡網友討論度很高的 Swap 變數互換 簡潔的算法。</p>
-<blockquote>
-<ul>
-<li>把陣列中前面的元素和後面的元素設定好條件 (必須前面為非零元素，後面為零元素)</li>
-<li>將兩個元素做交換，把非零元素換到前面</li>
-<li>最後後面索引 +1，進行下一次比較交換元素</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">moveZeroes</span>(<span class="params">self, nums: <span class="built_in">list</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line"></span><br><span class="line">        slow = <span class="number">0</span> </span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> fast <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[fast] != <span class="number">0</span> <span class="keyword">and</span> nums[slow] == <span class="number">0</span>: <span class="comment"># 前面的元素、後面的元素</span></span><br><span class="line">                nums[slow], nums[fast] = nums[fast], nums[slow] <span class="comment"># 將兩個元素做交換</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 第一次循環，剛開始索引 fast[0] slow[0]</span></span><br><span class="line">            <span class="keyword">if</span> nums[slow] != <span class="number">0</span>: </span><br><span class="line">                slow += <span class="number">1</span> <span class="comment"># 索引 +1 後，換比較交換 fast[1] ，slow[2]</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="其他算法"><a href="#其他算法" class="headerlink" title="其他算法"></a>其他算法</h3><p>雙指針算法：<a target="_blank" rel="noopener" href="https://medium.com/@urdreamliu/283-%E5%9C%96%E8%A7%A3-move-zeroes-4da4900f5aac">https://medium.com/@urdreamliu/283-圖解-move-zeroes-4da4900f5aac</a></p>
-<h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table>
-<thead>
-<tr>
-<th>Language</th>
-<th>Runtime</th>
-<th>Memory</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Java</td>
-<td>1ms</td>
-<td>43.9MB</td>
-</tr>
-<tr>
-<td>Python</td>
-<td>158ms</td>
-<td>17.9MB</td>
-</tr>
-</tbody></table>
-
+<h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|Language|Runtime|Memory|</span><br><span class="line">|--------|-------|------|</span><br><span class="line">|  Java  |0ms   |45.1MB|</span><br><span class="line">| Python |251ms  |17.9MB|</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -357,13 +332,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/04/28/LeetCode-136-Single-Number-Java-Python/" rel="prev" title="[LeetCode] 136. Single Number">
-      <i class="fa fa-chevron-left"></i> [LeetCode] 136. Single Number
+    <a href="/2023/05/28/LeetCode-118-Pascal-s-Triangle-Java-Python/" rel="prev" title="[LeetCode] 118. Pascal's Triangle">
+      <i class="fa fa-chevron-left"></i> [LeetCode] 118. Pascal's Triangle
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/05/17/LeetCode-35-Search-Insert-Position-Java-Python/" rel="next" title="[LeetCode] 35. Search Insert Position">
-      [LeetCode] 35. Search Insert Position <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -429,7 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%99%90%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">題目限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-amp-%E7%AD%86%E8%A8%98"><span class="nav-number">5.</span> <span class="nav-text">思路&amp;筆記</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA-%E5%AF%A6%E7%8F%BE"><span class="nav-number">6.</span> <span class="nav-text">JAVA 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E5%AF%A6%E7%8F%BE"><span class="nav-number">7.</span> <span class="nav-text">Python 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E9%80%B2%E9%9A%8E%E5%AF%A6%E7%8F%BE"><span class="nav-number">8.</span> <span class="nav-text">Python 進階實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AE%97%E6%B3%95"><span class="nav-number">9.</span> <span class="nav-text">其他算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E7%B8%BE"><span class="nav-number">10.</span> <span class="nav-text">成績</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%99%90%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">題目限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-amp-%E7%AD%86%E8%A8%98"><span class="nav-number">5.</span> <span class="nav-text">思路&amp;筆記</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA-%E5%AF%A6%E7%8F%BE"><span class="nav-number">6.</span> <span class="nav-text">JAVA 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E5%AF%A6%E7%8F%BE"><span class="nav-number">7.</span> <span class="nav-text">Python 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E7%B8%BE"><span class="nav-number">8.</span> <span class="nav-text">成績</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -628,9 +600,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://chris81051.github.io/2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/";
-    this.page.identifier = "2023/05/05/LeetCode-283-Move-Zeroes-Java-Python/";
-    this.page.title = "[LeetCode] 283. Move Zeroes";
+    this.page.url = "https://chris81051.github.io/2023/05/29/LeetCode-704-Binary-Search-Java-Python/";
+    this.page.identifier = "2023/05/29/LeetCode-704-Binary-Search-Java-Python/";
+    this.page.title = "[LeetCode] 704. Binary Search";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
