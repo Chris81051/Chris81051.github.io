@@ -166,6 +166,13 @@
 
   
   <url>
+    <loc>https://chris81051.github.io/categories/Hexo/</loc>
+    <lastmod>2023-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://chris81051.github.io/categories/LeetCode/</loc>
     <lastmod>2023-05-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -181,13 +188,6 @@
   
   <url>
     <loc>https://chris81051.github.io/categories/Spring-Boot/</loc>
-    <lastmod>2023-05-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chris81051.github.io/categories/Hexo/</loc>
     <lastmod>2023-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
