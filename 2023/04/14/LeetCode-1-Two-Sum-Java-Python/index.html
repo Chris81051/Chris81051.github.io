@@ -37,7 +37,7 @@
 <meta property="og:description" content="我想這題是正要開始寫 LeetCode 的人，大部分的人的第一題吧，這題是個基本題算在 easy 的題型。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-04-14T07:37:19.000Z">
-<meta property="article:modified_time" content="2023-04-18T09:12:21.299Z">
+<meta property="article:modified_time" content="2023-06-01T09:18:48.043Z">
 <meta property="article:author" content="Chris">
 <meta property="article:tag" content="前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,Java,JavaScript,HTML,CSS,SCSS">
 <meta name="twitter:card" content="summary">
@@ -320,9 +320,9 @@
 <h2 id="JAVA-初階實現"><a href="#JAVA-初階實現" class="headerlink" title="JAVA 初階實現"></a><u>JAVA 初階實現</u></h2><p>使用暴力解法：雙迴圈</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i+<span class="number">1</span>; j &lt; nums.length; j++)&#123; <span class="comment">// 元素不要重複到</span></span><br><span class="line">                <span class="keyword">if</span>(nums[i] + nums[j] == target)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;i, j&#125;; <span class="comment">// 回傳索引</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;&#125;; <span class="comment">// 當找不到符合條件的組合時，回傳一個空的整數陣列</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="JAVA-進階實現"><a href="#JAVA-進階實現" class="headerlink" title="JAVA 進階實現"></a><u>JAVA 進階實現</u></h2><p>筆者還在學習中，參考了討論區裡網友的解法。</p>
+<h2 id="JAVA-進階實現"><a href="#JAVA-進階實現" class="headerlink" title="JAVA 進階實現"></a><u>JAVA 進階實現</u></h2><p>筆者還在學習中，參考了討論區裡網友的解法，這裡有使用 HashMap 存資料。</p>
+<p>如果目標整數是 9，想像一下兩個數是各左右一半，那麼 9 減掉其中一半會是另一半的話，答案就出來了，我們只是把答案先放在 HashMap 裡的 Key 的位置， Value 是對應的索引位置，那個判斷式就是判斷 HashMap 裡有沒有另外一半，有的話把 Value 輸出出來。</p>
 <blockquote>
-<p>這裡有使用 HashMap 存資料。</p>
 <ul>
 <li>遍歷時用 target 減掉當下索引的值，可以得出另一個整數。(這個就是我們要相加起來的另一個整數，沒有的話代表不是兩數的合)</li>
 <li>因第一次判斷 Map 本來就是空的一定不成功，所以把已判斷過的元素跟索引存進 Map 裡。(這裡要顛倒存，因為之後判斷時要取索引，索引放在值的地方)</li>
