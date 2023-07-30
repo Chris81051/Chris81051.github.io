@@ -37,9 +37,13 @@
 <meta property="og:description" content="解這題最重要的是學習 Quick Sort 快速排序演算法是如何運作">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-07-23T08:53:37.000Z">
-<meta property="article:modified_time" content="2023-07-23T09:09:21.382Z">
+<meta property="article:modified_time" content="2023-07-30T01:56:18.840Z">
 <meta property="article:author" content="Chris">
-<meta property="article:tag" content="前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,Java,JavaScript,HTML,CSS,SCSS">
+<meta property="article:tag" content="Top 100 Liked Questions">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="QuickSort">
+<meta property="article:tag" content="Recursion">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://chris81051.github.io/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/">
@@ -147,6 +151,11 @@
         <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>關鍵字</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -285,7 +294,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　解這題最重要的是學習 Quick Sort 快速排序演算法是如何運作的，實做中間也可學到遞迴的概念，題目目標是把陣列從小到大排序後，找到給定的元素大小位置就是答案，在每次遞歸中我們需要線性的時間 <code>O(n)</code> 來進行分區操作。快速排序的遞歸樹的深度為 <code>O(log n)</code>，時間複雜度估算為 <code>O(n log n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　解這題最重要的是學習 Quick Sort 快速排序演算法是如何運作的，實作中間也可學到遞迴的概念，題目目標是把陣列從小到大排序後，找到給定的元素大小位置就是答案，在每次遞歸中我們需要線性的時間 <code>O(n)</code> 來進行分區操作。快速排序的遞歸樹的深度為 <code>O(log n)</code>，時間複雜度估算為 <code>O(n log n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
 <h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><blockquote>
 <p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the</em> <code>kth</code> <em>largest element in the array</em>.<br>Note that it is the <code>kth</code> largest element in the sorted order, not the <code>kth</code> distinct element.<br>Can you solve it without sorting?</p>
 </blockquote>
@@ -298,7 +307,7 @@
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>], k = <span class="number">4</span></span><br><span class="line">Output: <span class="number">4</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>解這題之前可能要先去了解一下 Quick Sort 快速排序演算法的原理，來作這題會比較好懂<br>不過也是可以使用語言自帶的 <code>.sort()</code> 方法來排序完，之後再把 k 個索引減掉就是答案了<br>另外這題也有運用到遞迴的概念，可能也要稍微去了解一下<br>這題總共會寫到三個 function，第一個 <code>quickSort()</code> 來執行遞迴，第二個 <code>partition()</code> 來執行把陣列排序後找到某個元素最正確的位置，第三個 <code>swap()</code> 來執行元素和元素間的交換</p>
+<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>解這題之前可能要先去了解一下 Quick Sort 快速排序演算法的原理，來作這題會比較好懂<br>不過也是可以使用語言自帶的 <code>sort()</code> 方法來排序完，之後再把 k 個索引減掉就是答案了<br>另外這題也有運用到遞迴的概念，可能也要稍微去了解一下<br>這題總共會寫到三個 function，第一個 <code>quickSort()</code> 來執行遞迴，第二個 <code>partition()</code> 來執行把陣列排序後找到某個元素最正確的位置，第三個 <code>swap()</code> 來執行元素和元素間的交換</p>
 <blockquote>
 <ul>
 <li>原本的 function 來呼叫自己寫的 <code>quickSort()</code> ，把陣列元素從小排到大，之後陣列的長度減掉 k 個索引就是我們要的答案</li>
@@ -311,9 +320,9 @@
 <p>[備註] <code>pivot - 1</code> 的意思是，<code>partition()</code> 做第一次排序的時候 pivot  最正確的位置已經被找出來了，遞迴在往後做的時候僅只要做左半邊的部分，所以迴圈的結束點會落在 pivot 的前一個索引，右半邊原理相同，起始點從 <code>pivot +1</code> 開始做循環。</p>
 <h3 id="partition-function-示意圖"><a href="#partition-function-示意圖" class="headerlink" title="partition function 示意圖"></a>partition function 示意圖</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 陣列範例 [5, 7, 1, 3, 2, 4]</span></span><br><span class="line"><span class="type">int</span> <span class="variable">pivot</span> <span class="operator">=</span> end;                     <span class="comment">// pivot 比較的目標數 (指標二)</span></span><br><span class="line"><span class="type">int</span> <span class="variable">pivotIndex</span> <span class="operator">=</span> start;              <span class="comment">// pivotIndex 最正確的位置 (指標三)</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; end; i++)&#123;    <span class="comment">// i 迴圈起始 指標一</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">     i                           pivot</span><br><span class="line">     ↓                             ↓</span><br><span class="line">[    <span class="number">5</span>,    <span class="number">7</span>,    <span class="number">1</span>,    <span class="number">3</span>,    <span class="number">2</span>,    <span class="number">4</span>    ]</span><br><span class="line">     ↑</span><br><span class="line"> pivotIndex</span><br><span class="line"></span><br><span class="line">num[i] &gt; num[pivot]，不做交換</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">     i                           pivot</span><br><span class="line">     ↓                             ↓</span><br><span class="line">[    <span class="number">5</span>,    <span class="number">7</span>,    <span class="number">1</span>,    <span class="number">3</span>,    <span class="number">2</span>,    <span class="number">4</span>    ]</span><br><span class="line">     ↑</span><br><span class="line"> pivotIndex</span><br><span class="line"></span><br><span class="line">num[i] &gt; num[pivot] 不做交換</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">           i                     pivot</span><br><span class="line">           ↓                       ↓</span><br><span class="line">[    <span class="number">5</span>,    <span class="number">7</span>,    <span class="number">1</span>,    <span class="number">3</span>,    <span class="number">2</span>,    <span class="number">4</span>    ]</span><br><span class="line">     ↑</span><br><span class="line"> pivotIndex</span><br><span class="line"></span><br><span class="line">num[i] &gt; num[pivot]</span><br><span class="line">不做交換</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">           i                     pivot</span><br><span class="line">           ↓                       ↓</span><br><span class="line">[    <span class="number">5</span>,    <span class="number">7</span>,    <span class="number">1</span>,    <span class="number">3</span>,    <span class="number">2</span>,    <span class="number">4</span>    ]</span><br><span class="line">     ↑</span><br><span class="line"> pivotIndex</span><br><span class="line"></span><br><span class="line">num[i] &gt; num[pivot] 不做交換</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">                 i               pivot</span><br><span class="line">                 ↓                 ↓</span><br><span class="line">[    <span class="number">5</span>,    <span class="number">7</span>,    <span class="number">1</span>,    <span class="number">3</span>,    <span class="number">2</span>,    <span class="number">4</span>    ]</span><br><span class="line">     ↑</span><br><span class="line"> pivotIndex</span><br><span class="line"></span><br><span class="line">num[i] &lt; num[pivot]</span><br><span class="line">num[i] 和 num[pivotIndex] 做交換</span><br><span class="line">(<span class="number">1</span> 跑到 <span class="number">5</span> 的位置)</span><br><span class="line">pivotIndex++</span><br></pre></td></tr></table></figure>
 
@@ -349,6 +358,7 @@
 <td>32.34MB</td>
 </tr>
 </tbody></table>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p>Quick Sort 快速排序：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mrW5OSr3OVc">https://www.youtube.com/watch?v=mrW5OSr3OVc</a></p>
 
     </div>
 
@@ -357,6 +367,13 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Top-100-Liked-Questions/" rel="tag"># Top 100 Liked Questions</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/QuickSort/" rel="tag"># QuickSort</a>
+              <a href="/tags/Recursion/" rel="tag"># Recursion</a>
+          </div>
 
         
 
@@ -433,7 +450,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%99%90%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">題目限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-amp-%E7%AD%86%E8%A8%98"><span class="nav-number">5.</span> <span class="nav-text">思路&amp;筆記</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#partition-function-%E7%A4%BA%E6%84%8F%E5%9C%96"><span class="nav-number">6.</span> <span class="nav-text">partition function 示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA-%E5%AF%A6%E7%8F%BE"><span class="nav-number">7.</span> <span class="nav-text">JAVA 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E5%AF%A6%E7%8F%BE"><span class="nav-number">8.</span> <span class="nav-text">Python 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E7%B8%BE"><span class="nav-number">9.</span> <span class="nav-text">成績</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%99%90%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">題目限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-amp-%E7%AD%86%E8%A8%98"><span class="nav-number">5.</span> <span class="nav-text">思路&amp;筆記</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#partition-function-%E7%A4%BA%E6%84%8F%E5%9C%96"><span class="nav-number">6.</span> <span class="nav-text">partition function 示意圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA-%E5%AF%A6%E7%8F%BE"><span class="nav-number">7.</span> <span class="nav-text">JAVA 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E5%AF%A6%E7%8F%BE"><span class="nav-number">8.</span> <span class="nav-text">Python 實現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E7%B8%BE"><span class="nav-number">9.</span> <span class="nav-text">成績</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">10.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -458,6 +475,12 @@
           
         <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
 </div>
@@ -536,7 +559,7 @@
 		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
 		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
 		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-		document.getElementById("sitetime").innerHTML=" Chris's Lab 已運行了 "+diffYears+" 年 "+diffDays+" 天 ";
+		document.getElementById("sitetime").innerHTML=" Chris's Lab 已運行了 "+diffYears+" 年 又 "+diffDays+" 天 ";
 	}
 	siteTime();
 </script>
