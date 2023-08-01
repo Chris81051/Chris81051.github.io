@@ -29,23 +29,23 @@
 
   gtag('config', 'G-DQ8D0CJFGG');
 </script>
-  <meta name="description" content="究竟何時才是買賣股票的最好時機呢?">
+  <meta name="description" content="這題主要運用到二分搜尋法，是 704. Binary Search 的變化題">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 121. Best Time to Buy and Sell Stock">
-<meta property="og:url" content="https://chris81051.github.io/2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/index.html">
+<meta property="og:title" content="LeetCode 33 Search in Rotated Sorted Array Java Python">
+<meta property="og:url" content="https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/index.html">
 <meta property="og:site_name" content="Chris&#39;s Lab">
-<meta property="og:description" content="究竟何時才是買賣股票的最好時機呢?">
+<meta property="og:description" content="這題主要運用到二分搜尋法，是 704. Binary Search 的變化題">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-04-18T08:51:34.000Z">
-<meta property="article:modified_time" content="2023-07-30T02:07:16.725Z">
+<meta property="article:published_time" content="2023-08-01T14:23:00.000Z">
+<meta property="article:modified_time" content="2023-08-01T14:23:39.296Z">
 <meta property="article:author" content="Chris">
 <meta property="article:tag" content="Top 100 Liked Questions">
-<meta property="article:tag" content="Dynamic Programming">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Python">
+<meta property="article:tag" content="Hash Table">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chris81051.github.io/2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/">
+<link rel="canonical" href="https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/">
 
 
 <script id="page-configurations">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title>[LeetCode] 121. Best Time to Buy and Sell Stock | Chris's Lab</title>
+  <title>LeetCode 33 Search in Rotated Sorted Array Java Python | Chris's Lab</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ8D0CJFGG"></script>
     <script>
@@ -217,7 +217,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/">
+    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://drive.google.com/uc?export=view&id=1vRmbhAemSAwPDo0DQ7gRulglOxJcJHb9">
@@ -230,7 +230,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode] 121. Best Time to Buy and Sell Stock
+          LeetCode 33 Search in Rotated Sorted Array Java Python
         </h1>
 
         <div class="post-meta">
@@ -240,7 +240,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2023-04-18 16:51:34" itemprop="dateCreated datePublished" datetime="2023-04-18T16:51:34+08:00">2023-04-18</time>
+              <time title="創建時間：2023-08-01 22:23:00" itemprop="dateCreated datePublished" datetime="2023-08-01T22:23:00+08:00">2023-08-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,7 +256,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/Array/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
+                  <a href="/categories/LeetCode/Array/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
                 </span>
             </span>
 
@@ -276,13 +276,13 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">究竟何時才是買賣股票的最好時機呢?</div>
+            <div class="post-description">這題主要運用到二分搜尋法，是 704. Binary Search 的變化題</div>
 
         </div>
       </header>
@@ -293,52 +293,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　究竟何時才是買賣股票的最好時機呢? 這題邏輯很生活化，就是把一個陣列內所有的價格遍歷完，低買高賣後把最大的差價回傳出來，這題使用了單迴圈遍歷陣列裡所有的價格，遍歷裡也是常數的時間操作，時間複雜度推算可以達到 <code>O(n)</code>，這篇有 Java 和 Python 的寫法。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題主要運用到二分搜尋法，是 704. Binary Search 的變化題，目標是找到一個旋轉陣列中指定元素的陣列，用到一個 while 迴圈和其餘 if 判斷，時間複雜度估 <code>O(log n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
 <h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><blockquote>
-<p>You are given an array <strong>prices</strong> where <strong>prices[i]</strong> is the price of a given stock on the <strong>ith</strong> day.<br>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock.<br>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <strong>0</strong>.</p>
+<p>There is an integer array <code>nums</code> sorted in ascending order (with <strong>distinct</strong> values).<br>Prior to being passed to your function, <code>nums</code> is <strong>possibly rotated</strong> at an unknown pivot index <code>k</code> (<code>1 &lt;= k &lt; nums.length</code>) such that the resulting array is <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>0-indexed</strong>). For example, <code>[0,1,2,4,5,6,7]</code> might be rotated at pivot index <code>3</code> and become <code>[4,5,6,7,0,1,2]</code>.<br>Given the array <code>nums</code> <strong>after</strong> the possible rotation and an integer <code>target</code>, return <em>the index of</em> <code>target</code> <em>if it is in</em> <code>nums</code><em>, or</em> <code>-1</code> <em>if it is not in</em> <code>nums</code>.<br>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
 </blockquote>
 <blockquote>
-<p>給你一個價格陣列 <strong>prices</strong> ，<strong>prices[i]</strong> 是取得一個股票在第 i 天的價格。<br>你想要最大化你的利潤，藉著選擇一天去買一張股票和選擇在未來不同天裡去賣掉那張股票。<br>你可以從這個交易回傳最大化的利潤。如果你無法達到任何利潤，就回傳 0。</p>
+<p>有一個整數陣列 <code>nums</code> 已升序排序 (且具不同的值)。<br>在傳遞給你的函數之前，<code>nums</code> 可能在一個未知的樞軸索引 <code>k</code> (<code>1 &lt;= k &lt; nums.length</code>) 處旋轉，這樣得到的陣列是 <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>索引從0開始</strong>)，例如，<code>[0,1,2,4,5,6,7]</code> 可能會在樞軸 3 處旋轉並變成 <code>[4,5,6,7,0,1,2]</code> 。<br>給定一個可能的旋轉後的陣列 <code>nums</code> 和一個整數 <code>target</code>，如果 <code>target</code> 它在 <code>nums</code> 中就回傳 <code>target</code> 的索引， 如果它不在 <code>nums</code> 中就回傳 <code>-1</code>。<br>你必須寫出一個 <code>O(log n)</code> 時間複雜度的演算法。</p>
 </blockquote>
-<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">https://leetcode.com/problems/best-time-to-buy-and-sell-stock/</a></p>
-<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p>注意：不能在第二天買入後第一天賣出，必須先買後賣。</p>
-<p><code>1 &lt;= prices.length &lt;= 105</code><br><code>0 &lt;= prices[i] &lt;= 104</code></p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: prices = [<span class="number">7</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">4</span>]</span><br><span class="line">Output: <span class="number">5</span></span><br><span class="line">Explanation: Buy on day <span class="number">2</span> (price = <span class="number">1</span>) and sell on day <span class="number">5</span> (price = <span class="number">6</span>), profit = <span class="number">6</span>-<span class="number">1</span> = <span class="number">5.</span></span><br><span class="line">Note that buying on day <span class="number">2</span> and selling on day <span class="number">1</span> is not allowed because you must buy before you sell.</span><br></pre></td></tr></table></figure>
+<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-in-rotated-sorted-array/">https://leetcode.com/problems/search-in-rotated-sorted-array/</a></p>
+<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= nums.length &lt;= 5000</code><br><code>104 &lt;= nums[i] &lt;= 104</code><br>All values of <code>nums</code> are <strong>unique</strong>.<br><code>nums</code> is an ascending array that is possibly rotated.<br><code>104 &lt;= target &lt;= 104</code></p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>], target = <span class="number">0</span></span><br><span class="line">Output: <span class="number">4</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: prices = [<span class="number">7</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">Output: <span class="number">0</span></span><br><span class="line">Explanation: In <span class="built_in">this</span> <span class="keyword">case</span>, no transactions are done and the <span class="type">max</span> <span class="variable">profit</span> <span class="operator">=</span> <span class="number">0.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>], target = <span class="number">3</span></span><br><span class="line">Output: -<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">1</span>], target = <span class="number">0</span></span><br><span class="line">Output: -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>這題用的技巧是二分搜尋法，原理是每次循環都會將陣列搜索範圍縮小一半，目的是要找到 target 值的 index</p>
+<blockquote>
 <ul>
-<li>判斷陣列中值的大小，把更小的值存起來</li>
-<li>兩數的相差 &#x3D; 把當前的索引的值 - 上一個索引的值</li>
-<li>比較前一個值，將比較大的值存入</li>
+<li>初始我們會設定起點位置、終點位置、中間點 (這些是二分搜尋法的必要條件)</li>
+<li><code>middle = start + ( end - start ) / 2</code> 可取得中間點</li>
+<li>如果整個陣列都是有序的，那麼目標整數 target 必然存在於該有序的部分，我們可以直接進行二分搜尋找到目標值，但這題比較麻煩的是我們不知道陣列會旋轉成什麼樣子，所以先判斷陣列的左邊還是右邊是否有序</li>
+<li>如果那半邊是有序的，就在那半邊使用二分搜尋法做搜尋</li>
+<li>如果 target 不在那半邊的話，則會轉向另一邊做搜尋</li>
+<li>直到 start 大於等於 end，表示搜尋範圍為空，結束搜尋</li>
+<li>到最後範圍會縮到最小，起點值和目標值一定會重疊，然後回傳答案索引</li>
 </ul>
 </blockquote>
-<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxProfit</span><span class="params">(<span class="type">int</span>[] prices)</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> Integer.MAX_VALUE;  <span class="comment">// 整數類型中的最大值 2³¹</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">op</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">pist</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; prices.length; i++)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 找到陣列中最小的值</span></span><br><span class="line">            <span class="keyword">if</span>(prices[i] &lt; min)&#123;</span><br><span class="line">                min = prices[i]; <span class="comment">// 前一個索引的值(最小的值)</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 兩數的相差 = 當前索引的值 - 前一個索引的值(最小的值)</span></span><br><span class="line">            pist = prices[i] - min;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 比較前一個值，將比較大的值存入</span></span><br><span class="line">            <span class="keyword">if</span>(op &lt; pist)&#123;  </span><br><span class="line">                op = pist;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> op;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[注意點] 之所以要用上述中間點的寫法會比較安全，因如果 start 和 end 趨近於最大數時，兩者相加起來的合可能會造成整數溢位</p>
+<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 起點位置</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> nums.length - <span class="number">1</span>; <span class="comment">// 終點位置</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">middle</span> <span class="operator">=</span> start + (end-start)/<span class="number">2</span>; <span class="comment">// 中間點</span></span><br><span class="line">        <span class="keyword">if</span> (nums[middle] == target) <span class="keyword">return</span> middle; <span class="comment">// 剛好中間點就是答案就回傳</span></span><br><span class="line"></span><br><span class="line">				<span class="comment">// 判斷左半邊是有序的</span></span><br><span class="line">				<span class="keyword">if</span> (nums[start] &lt;= nums[middle]) &#123;</span><br><span class="line">						<span class="comment">// 如果 target 在左半邊的範圍內，則繼續在左半邊進行搜尋</span></span><br><span class="line">            <span class="keyword">if</span> (target &gt;= nums[start] &amp;&amp; target &lt; nums[middle]) &#123;</span><br><span class="line">								<span class="comment">// 重新定義終點，下次回圈找到新的終點就好 (因為目標值一定比自己小，要不包含 middle 自己)</span></span><br><span class="line">                end = middle - <span class="number">1</span>;</span><br><span class="line">						<span class="comment">// 否則，轉向右半邊進行搜尋</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">								<span class="comment">// 重新定義起點，下次回圈從新的起點開始就好 (因為目標值一定比自己大，要不包含 middle 自己)</span></span><br><span class="line">                start = middle + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">				<span class="comment">// 否則，右半邊是有序的</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; nums[middle] &amp;&amp; target &lt;= nums[end]) &#123;</span><br><span class="line">                start = middle + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                end = middle - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 到最後範圍會縮到最小，起點值和目標值一定會重疊，就回傳索引</span></span><br><span class="line">    <span class="keyword">return</span> nums[start] == target ? start : -<span class="number">1</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"></span><br><span class="line">        <span class="built_in">min</span> = prices[<span class="number">0</span>]; <span class="comment"># 預設索引0</span></span><br><span class="line">        op = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 從索引1開始練遍歷</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">len</span>(prices)):</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 找出最小值</span></span><br><span class="line">            <span class="keyword">if</span> prices[i] &lt; <span class="built_in">min</span> :</span><br><span class="line">                <span class="built_in">min</span> = prices[i]</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 把兩值的相差存入</span></span><br><span class="line">            <span class="keyword">elif</span>((prices[i] - <span class="built_in">min</span>) &gt; op): <span class="comment"># 比較前一個值</span></span><br><span class="line">                op = prices[i] - <span class="built_in">min</span> <span class="comment"># 將比較大的值存入</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> op;</span><br></pre></td></tr></table></figure>
+<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法<br>不一樣的點是變數的宣告方式不一樣，還有 Java 和 Python 的三元運算寫法不一樣</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"></span><br><span class="line">				start, end  = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span> <span class="comment"># 起點、終點</span></span><br><span class="line">				</span><br><span class="line">				<span class="keyword">while</span> start &lt; end:</span><br><span class="line">						middle = start + (end - start) // <span class="number">2</span> <span class="comment"># 中間點</span></span><br><span class="line"></span><br><span class="line">						<span class="comment"># 中間點是答案就回傳</span></span><br><span class="line">						<span class="keyword">if</span> nums[middle] == target </span><br><span class="line">								<span class="keyword">return</span> middle </span><br><span class="line">						</span><br><span class="line">						<span class="comment"># 判斷左半邊是有序的</span></span><br><span class="line">						<span class="keyword">if</span> nums[start] &lt;= nums[middle]:</span><br><span class="line">								<span class="comment"># 如果 target 在左半邊的範圍內，則繼續在左半邊進行搜尋</span></span><br><span class="line">								<span class="keyword">if</span> nums[start] &lt;= target <span class="keyword">and</span> target &lt; nums[middle]:</span><br><span class="line">										end = middle - <span class="number">1</span></span><br><span class="line">								<span class="keyword">else</span>: </span><br><span class="line">										start = middle + <span class="number">1</span> <span class="comment"># 否則，轉向右半邊進行搜尋</span></span><br><span class="line">						<span class="comment"># 否則，右半邊是有序的</span></span><br><span class="line">						<span class="keyword">else</span>:</span><br><span class="line">								<span class="keyword">if</span> nums[middle] &lt; target <span class="keyword">and</span> target &lt;= nums[end]:</span><br><span class="line">										start = middle + <span class="number">1</span></span><br><span class="line">								<span class="keyword">else</span>:</span><br><span class="line">										end = middle - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果 start == target 回傳 start 否則回傳 -1</span></span><br><span class="line">				<span class="keyword">return</span> start <span class="keyword">if</span> nums[start] == target <span class="keyword">else</span> -<span class="number">1</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table>
-<thead>
-<tr>
-<th>Language</th>
-<th>Runtime</th>
-<th>Memory</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Java</td>
-<td>2ms</td>
-<td>59.4MB</td>
-</tr>
-<tr>
-<td>Python</td>
-<td>984 ms</td>
-<td>25  MB</td>
-</tr>
-</tbody></table>
-
+<h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|Language|Runtime|Memory|</span><br><span class="line">|--------|-------|------|</span><br><span class="line">|  Java  |0ms   |41.2MB|</span><br><span class="line">| Python |54ms  |16.75MB|</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -348,9 +336,9 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Top-100-Liked-Questions/" rel="tag"># Top 100 Liked Questions</a>
-              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
               <a href="/tags/Java/" rel="tag"># Java</a>
               <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
           </div>
 
         
@@ -359,13 +347,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/04/14/LeetCode-1-Two-Sum-Java-Python/" rel="prev" title="[LeetCode] 1. Two Sum">
-      <i class="fa fa-chevron-left"></i> [LeetCode] 1. Two Sum
+    <a href="/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/" rel="prev" title="[LeetCode] 215. Kth Largest Element in an Array">
+      <i class="fa fa-chevron-left"></i> [LeetCode] 215. Kth Largest Element in an Array
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/04/23/LeetCode-169-Majority-Element-Java-Python/" rel="next" title="[LeetCode] 169. Majority Element">
-      [LeetCode] 169. Majority Element <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -636,9 +621,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://chris81051.github.io/2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/";
-    this.page.identifier = "2023/04/18/LeetCode-121-Best-Time-to-Buy-and-Sell-Stock-Java-Python/";
-    this.page.title = "[LeetCode] 121. Best Time to Buy and Sell Stock";
+    this.page.url = "https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/";
+    this.page.identifier = "2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/";
+    this.page.title = "LeetCode 33 Search in Rotated Sorted Array Java Python";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
