@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chris81051.github.io/about/index.html</loc>
+    <loc>https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/</loc>
     
     <lastmod>2023-08-01</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/</loc>
+    <loc>https://chris81051.github.io/about/index.html</loc>
     
     <lastmod>2023-08-01</lastmod>
     
@@ -225,7 +225,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/tags/Dynamic-Programming/</loc>
+    <loc>https://chris81051.github.io/tags/Hash-Table/</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -246,7 +246,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/tags/Hash-Table/</loc>
+    <loc>https://chris81051.github.io/tags/Dynamic-Programming/</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -339,14 +339,14 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/categories/LeetCode/Array/Medium/</loc>
+    <loc>https://chris81051.github.io/categories/LeetCode/Array/Easy/</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/categories/LeetCode/Array/Easy/</loc>
+    <loc>https://chris81051.github.io/categories/LeetCode/Array/Medium/</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
