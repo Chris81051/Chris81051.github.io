@@ -6,7 +6,7 @@
   <link href="https://chris81051.github.io/atom.xml" rel="self"/>
   
   <link href="https://chris81051.github.io/"/>
-  <updated>2023-08-08T15:22:33.000Z</updated>
+  <updated>2023-08-27T07:01:22.000Z</updated>
   <id>https://chris81051.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[LeetCode] 56. Merge Intervals</title>
+    <link href="https://chris81051.github.io/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/"/>
+    <id>https://chris81051.github.io/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/</id>
+    <published>2023-08-27T07:01:22.000Z</published>
+    <updated>2023-08-27T07:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題運用雙指針來實作，目標是把陣列中的元素重疊的部分合併起來，有使用到合併和排序的演算法，時間複雜度估為 <code>O(n log n)</code>，這裡有 JAVA 和 Python 的寫法。</p><h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><blockquote><p>Given an array of <code>intervals</code> where <code>intervals[i] = [starti, endi]</code>, merge all overlapping intervals, and return <em>an array of the non-overlapping intervals that cover all the intervals in the input</em>.</p></blockquote><blockquote><p>給定一個陣列 <code>intervals</code> 其中，間隔在 <code>intervals[i] = [starti, endi]</code>，合併全部有重疊的間隔，並回傳覆蓋輸入中所有區間的非重疊區間的陣列。</p></blockquote><p>題目連結：<a href="https://leetcode.com/problems/merge-intervals/">https://leetcode.com/problems/merge-intervals/</a></p><h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= intervals.length &lt;= 104</code><br><code>intervals[i].length == 2</code><br><code>0 &lt;= starti &lt;= endi &lt;= 104</code></p><h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[<span class="number">1</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">6</span>],[<span class="number">8</span>,<span class="number">10</span>],[<span class="number">15</span>,<span class="number">18</span>]]</span><br><span class="line">Output: [[<span class="number">1</span>,<span class="number">6</span>],[<span class="number">8</span>,<span class="number">10</span>],[<span class="number">15</span>,<span class="number">18</span>]]</span><br><span class="line">Explanation: Since intervals [<span class="number">1</span>,<span class="number">3</span>] and [<span class="number">2</span>,<span class="number">6</span>] overlap, merge them into [<span class="number">1</span>,<span class="number">6</span>].</span><br></pre></td></tr></table></figure><p>區間 [ 1, 3 ] 和 [ 2, 6 ] 重疊，將它們合併為 [ 1, 6 ]</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[<span class="number">1</span>,<span class="number">4</span>],[<span class="number">4</span>,<span class="number">5</span>]]</span><br><span class="line">Output: [[<span class="number">1</span>,<span class="number">5</span>]]</span><br><span class="line">Explanation: Intervals [<span class="number">1</span>,<span class="number">4</span>] and [<span class="number">4</span>,<span class="number">5</span>] are considered overlapping.</span><br></pre></td></tr></table></figure><p>區間 [ 1, 4 ] 和 [ 4, 5 ] 可被視為重疊區間</p><h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><blockquote><ul><li>將原始的陣列做升序排序</li><li>宣告一個 res (來裝判斷過的元素)</li><li>把 intervals 的第一個元素裝入 res</li><li>for 迴圈從 intervals 第二個元素開始循環</li><li>如果 res 最後一個元素後面的值 ≥ intervals 第二個元素前面的值的話</li><li>將 intervals 第二個元素後面的值比較 res 最後一個元素後面的值，取較大的值合併</li></ul></blockquote><h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] merge(<span class="type">int</span>[][] intervals) &#123;</span><br><span class="line">        <span class="keyword">if</span> (intervals == <span class="literal">null</span> || intervals.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> intervals;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        List&lt;<span class="type">int</span>[]&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(); <span class="comment">// 初始化陣列 (因為不知道陣列元素有幾個)</span></span><br><span class="line">        Arrays.sort(intervals, (a, b) -&gt; (a[<span class="number">0</span>] - b[<span class="number">0</span>])); <span class="comment">// 把陣列排成升序</span></span><br><span class="line">        res.add(intervals[<span class="number">0</span>]); <span class="comment">// 添加陣列第一個區間 res = [[1,3]]</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 原本的陣列從第二個開始循環比較</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; intervals.lenght - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 如果有重疊的話</span></span><br><span class="line">            <span class="keyword">if</span> (res.get(res.size() - <span class="number">1</span>)[<span class="number">1</span>] &gt;= intervals[i][<span class="number">0</span>]) &#123;</span><br><span class="line">                res.get(res.size() - <span class="number">1</span>)[<span class="number">1</span>] = Math.max(res.get(res.size() - <span class="number">1</span>)[<span class="number">1</span>], intervals[i][<span class="number">1</span>]); <span class="comment">// 取較大的值合併</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res.add(intervals[i]); <span class="comment">// 沒有重疊，直接加入結果列表</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">return</span> res.toArray(<span class="keyword">new</span> <span class="title class_">int</span>[res.size()][]); <span class="comment">// 沒有重疊，轉成陣列輸出</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">merge</span>(<span class="params">self, intervals: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line"></span><br><span class="line">        intervals.sort()  <span class="comment"># 對區間列表進行排序</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 準備一個容器來裝合併的元素 (索引 0 先放進去)</span></span><br><span class="line">        res = [intervals[<span class="number">0</span>]]  <span class="comment"># 添加陣列第一個區間 res = [[1,3]]</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 原本的陣列從第二個開始循環比較</span></span><br><span class="line">        <span class="comment"># intervals[1:]</span></span><br><span class="line">        <span class="comment"># Iteration 1: start = 2, end = 6</span></span><br><span class="line">        <span class="comment"># Iteration 2: start = 8, end = 10</span></span><br><span class="line">        <span class="comment"># Iteration 3: start = 15, end = 18</span></span><br><span class="line">        <span class="keyword">for</span> start, end <span class="keyword">in</span> intervals[<span class="number">1</span>:]:</span><br><span class="line">            <span class="comment"># 如果有重疊</span></span><br><span class="line">            <span class="keyword">if</span> res[-<span class="number">1</span>][<span class="number">1</span>] &gt;= start:</span><br><span class="line">                res[-<span class="number">1</span>][<span class="number">1</span>] = <span class="built_in">max</span>(res[-<span class="number">1</span>][<span class="number">1</span>], end)  <span class="comment"># 取較大的值合併</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res.append([start, end])  <span class="comment"># 沒有重疊，直接加入結果列表</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table><thead><tr><th>Language</th><th>Runtime</th><th>Memory</th></tr></thead><tbody><tr><td>Java</td><td>7ms</td><td>45.34MB</td></tr><tr><td>Python</td><td>130ms</td><td>21.40MB</td></tr></tbody></table>]]></content>
+    
+    
+    <summary type="html">這題運用雙指針來實作，目標是把陣列中的元素重疊的部分合併起來</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://chris81051.github.io/categories/LeetCode/"/>
+    
+    <category term="Array" scheme="https://chris81051.github.io/categories/LeetCode/Array/"/>
+    
+    <category term="Medium" scheme="https://chris81051.github.io/categories/LeetCode/Array/Medium/"/>
+    
+    
+    <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
+    
+    <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
+    
+    <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
+    
+    <category term="Recursion" scheme="https://chris81051.github.io/tags/Recursion/"/>
+    
+  </entry>
   
   <entry>
     <title>[LeetCode] 200. Number of Islands</title>
@@ -165,13 +196,13 @@
     
     <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
     
-    <category term="Greedy" scheme="https://chris81051.github.io/tags/Greedy/"/>
-    
-    <category term="Two Pointers" scheme="https://chris81051.github.io/tags/Two-Pointers/"/>
-    
     <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
+    
+    <category term="Greedy" scheme="https://chris81051.github.io/tags/Greedy/"/>
+    
+    <category term="Two Pointers" scheme="https://chris81051.github.io/tags/Two-Pointers/"/>
     
   </entry>
   
@@ -198,11 +229,11 @@
     
     <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
     
-    <category term="Two Pointers" scheme="https://chris81051.github.io/tags/Two-Pointers/"/>
-    
     <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
+    
+    <category term="Two Pointers" scheme="https://chris81051.github.io/tags/Two-Pointers/"/>
     
   </entry>
   
@@ -229,11 +260,11 @@
     
     <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
     
+    <category term="Dynamic Programming" scheme="https://chris81051.github.io/tags/Dynamic-Programming/"/>
+    
     <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
-    
-    <category term="Dynamic Programming" scheme="https://chris81051.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   
@@ -291,11 +322,11 @@
     
     <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
     
+    <category term="Dynamic Programming" scheme="https://chris81051.github.io/tags/Dynamic-Programming/"/>
+    
     <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
-    
-    <category term="Dynamic Programming" scheme="https://chris81051.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   
@@ -353,11 +384,11 @@
     
     <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
     
-    <category term="Two Pointers" scheme="https://chris81051.github.io/tags/Two-Pointers/"/>
-    
     <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
+    
+    <category term="Two Pointers" scheme="https://chris81051.github.io/tags/Two-Pointers/"/>
     
   </entry>
   
@@ -446,11 +477,11 @@
     
     <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
     
+    <category term="Dynamic Programming" scheme="https://chris81051.github.io/tags/Dynamic-Programming/"/>
+    
     <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
-    
-    <category term="Dynamic Programming" scheme="https://chris81051.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   
