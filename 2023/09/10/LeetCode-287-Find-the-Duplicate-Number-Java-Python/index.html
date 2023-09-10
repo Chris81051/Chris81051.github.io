@@ -29,23 +29,24 @@
 
   gtag('config', 'G-DQ8D0CJFGG');
 </script>
-  <meta name="description" content="這題主要運用到二分搜尋法，是 704. Binary Search 的變化題">
+  <meta name="description" content="這題是一題把陣列當成類似 linked list 的題目，目標是找到陣列中重複的元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 33. Search in Rotated Sorted Array">
-<meta property="og:url" content="https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/index.html">
+<meta property="og:title" content="[LeetCode] 287. Find the Duplicate Number">
+<meta property="og:url" content="https://chris81051.github.io/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/index.html">
 <meta property="og:site_name" content="Chris&#39;s Lab">
-<meta property="og:description" content="這題主要運用到二分搜尋法，是 704. Binary Search 的變化題">
+<meta property="og:description" content="這題是一題把陣列當成類似 linked list 的題目，目標是找到陣列中重複的元素">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-08-01T14:23:00.000Z">
-<meta property="article:modified_time" content="2023-08-01T14:23:00.000Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1CDg9fLAwgwmes-zUaDo2VfH8hC9q4f9d">
+<meta property="article:published_time" content="2023-09-10T15:35:30.000Z">
+<meta property="article:modified_time" content="2023-09-10T15:35:30.000Z">
 <meta property="article:author" content="Chris">
 <meta property="article:tag" content="Top 100 Liked Questions">
-<meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=1CDg9fLAwgwmes-zUaDo2VfH8hC9q4f9d">
 
-<link rel="canonical" href="https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/">
+<link rel="canonical" href="https://chris81051.github.io/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/">
 
 
 <script id="page-configurations">
@@ -58,7 +59,7 @@
   };
 </script>
 
-  <title>[LeetCode] 33. Search in Rotated Sorted Array | Chris's Lab</title>
+  <title>[LeetCode] 287. Find the Duplicate Number | Chris's Lab</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ8D0CJFGG"></script>
     <script>
@@ -217,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/">
+    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://drive.google.com/uc?export=view&id=1vRmbhAemSAwPDo0DQ7gRulglOxJcJHb9">
@@ -230,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode] 33. Search in Rotated Sorted Array
+          [LeetCode] 287. Find the Duplicate Number
         </h1>
 
         <div class="post-meta">
@@ -240,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2023-08-01 22:23:00" itemprop="dateCreated datePublished" datetime="2023-08-01T22:23:00+08:00">2023-08-01</time>
+              <time title="創建時間：2023-09-10 23:35:30" itemprop="dateCreated datePublished" datetime="2023-09-10T23:35:30+08:00">2023-09-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,13 +277,13 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">這題主要運用到二分搜尋法，是 704. Binary Search 的變化題</div>
+            <div class="post-description">這題是一題把陣列當成類似 linked list 的題目，目標是找到陣列中重複的元素</div>
 
         </div>
       </header>
@@ -293,38 +294,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題主要運用到二分搜尋法，是 704. Binary Search 的變化題，目標是找到一個旋轉陣列中指定元素的陣列，用到一個 while 迴圈和其餘 if 判斷，時間複雜度估 <code>O(log n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題是一題把陣列當成類似 linked list 的題目，目標是找到陣列中重複的元素，因它只對陣列進行了兩次循環，而每次循環都是線性時間的運作，時間複雜度可達 <code>O(n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
 <h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><blockquote>
-<p>There is an integer array <code>nums</code> sorted in ascending order (with <strong>distinct</strong> values).<br>Prior to being passed to your function, <code>nums</code> is <strong>possibly rotated</strong> at an unknown pivot index <code>k</code> (<code>1 &lt;= k &lt; nums.length</code>) such that the resulting array is <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>0-indexed</strong>). For example, <code>[0,1,2,4,5,6,7]</code> might be rotated at pivot index <code>3</code> and become <code>[4,5,6,7,0,1,2]</code>.<br>Given the array <code>nums</code> <strong>after</strong> the possible rotation and an integer <code>target</code>, return <em>the index of</em> <code>target</code> <em>if it is in</em> <code>nums</code><em>, or</em> <code>-1</code> <em>if it is not in</em> <code>nums</code>.<br>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+<p>Given an array of integers <code>nums</code> containing <code>n + 1</code> integers where each integer is in the range <code>[1, n]</code> inclusive.<br>There is only <strong>one repeated number</strong> in <code>nums</code>, return <em>this repeated number</em>.<br>You must solve the problem <strong>without</strong> modifying the array <code>nums</code> and uses only constant extra space.</p>
 </blockquote>
 <blockquote>
-<p>有一個整數陣列 <code>nums</code> 已升序排序 (且具不同的值)。<br>在傳遞給你的函數之前，<code>nums</code> 可能在一個未知的樞軸索引 <code>k</code> (<code>1 &lt;= k &lt; nums.length</code>) 處旋轉，這樣得到的陣列是 <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>索引從0開始</strong>)，例如，<code>[0,1,2,4,5,6,7]</code> 可能會在樞軸 3 處旋轉並變成 <code>[4,5,6,7,0,1,2]</code> 。<br>給定一個可能的旋轉後的陣列 <code>nums</code> 和一個整數 <code>target</code>，如果 <code>target</code> 它在 <code>nums</code> 中就回傳 <code>target</code> 的索引， 如果它不在 <code>nums</code> 中就回傳 <code>-1</code>。<br>你必須寫出一個 <code>O(log n)</code> 時間複雜度的演算法。</p>
+<p>給定一個整數陣列 <code>nums</code> 含有 <code>n + 1</code> 個整數，每個整數都在 <code>[1, n]</code> 範圍包含裡。<br><code>nums</code>  中只有一個重複的數字，回傳這個重複的數字。<br>你必須在不能修改 <code>nums</code> 的情況下解決這個問題，而且只能使用常數的記憶體空間。</p>
 </blockquote>
-<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-in-rotated-sorted-array/">https://leetcode.com/problems/search-in-rotated-sorted-array/</a></p>
-<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= nums.length &lt;= 5000</code><br><code>104 &lt;= nums[i] &lt;= 104</code><br>All values of <code>nums</code> are <strong>unique</strong>.<br><code>nums</code> is an ascending array that is possibly rotated.<br><code>104 &lt;= target &lt;= 104</code></p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>], target = <span class="number">0</span></span><br><span class="line">Output: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-the-duplicate-number/">https://leetcode.com/problems/find-the-duplicate-number/</a></p>
+<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= n &lt;= 105</code><br><code>nums.length == n + 1</code><br><code>1 &lt;= nums[i] &lt;= n</code></p>
+<p>All the integers in <code>nums</code> appear only <strong>once</strong> except for <strong>precisely one integer</strong> which appears <strong>two or more</strong> times.</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">2</span>]</span><br><span class="line">Output: <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>], target = <span class="number">3</span></span><br><span class="line">Output: -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>]</span><br><span class="line">Output: <span class="number">3</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">1</span>], target = <span class="number">0</span></span><br><span class="line">Output: -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>這題用的技巧是二分搜尋法，原理是每次循環都會將陣列搜索範圍縮小一半，目的是要找到 target 值的 index</p>
+<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>暴力的解法是利用雙迴圈，找出相等的元素後就是答案，結果超過時間限制 (不採用)</p>
+<p>另一種解法，運用 HashSet 方法的特性，找出不能出現的元素</p>
 <blockquote>
 <ul>
-<li>初始我們會設定起點位置、終點位置、中間點 (這些是二分搜尋法的必要條件)</li>
-<li><code>middle = start + ( end - start ) / 2</code> 可取得中間點</li>
-<li>如果整個陣列都是有序的，那麼目標整數 target 必然存在於該有序的部分，我們可以直接進行二分搜尋找到目標值，但這題比較麻煩的是我們不知道陣列會旋轉成什麼樣子，所以先判斷陣列的左邊還是右邊是否有序</li>
-<li>如果那半邊是有序的，就在那半邊使用二分搜尋法做搜尋</li>
-<li>如果 target 不在那半邊的話，則會轉向另一邊做搜尋</li>
-<li>直到 start 大於等於 end，表示搜尋範圍為空，結束搜尋</li>
-<li>到最後範圍會縮到最小，起點值和目標值一定會重疊，然後回傳答案索引</li>
+<li>循環 nums 陣列，把每個元素添加到 HashSet 中</li>
+<li>如果發現某個元素已經存在於 HashSet 中，那麼這個元素就是重複的</li>
+<li>回傳這個元素</li>
 </ul>
 </blockquote>
-<p>[注意點] 之所以要用上述中間點的寫法會比較安全，因如果 start 和 end 趨近於最大數時，兩者相加起來的合可能會造成整數溢位</p>
-<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 起點位置</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> nums.length - <span class="number">1</span>; <span class="comment">// 終點位置</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> <span class="variable">middle</span> <span class="operator">=</span> start + (end-start)/<span class="number">2</span>; <span class="comment">// 中間點</span></span><br><span class="line">            <span class="keyword">if</span> (nums[middle] == target) <span class="keyword">return</span> middle; <span class="comment">// 剛好中間點就是答案就回傳</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 判斷左半邊是有序的</span></span><br><span class="line">            <span class="keyword">if</span> (nums[start] &lt;= nums[middle]) &#123;</span><br><span class="line">                <span class="comment">// 如果 target 在左半邊的範圍內，則繼續在左半邊進行搜尋</span></span><br><span class="line">                <span class="keyword">if</span> (target &gt;= nums[start] &amp;&amp; target &lt; nums[middle]) &#123;</span><br><span class="line">                    <span class="comment">// 重新定義終點，下次回圈找到新的終點就好</span></span><br><span class="line">                    end = middle - <span class="number">1</span>;</span><br><span class="line">                <span class="comment">// 否則，轉向右半邊進行搜尋</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 重新定義起點，下次回圈從新的起點開始就好</span></span><br><span class="line">                    start = middle + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="comment">// 否則，右半邊是有序的</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (target &gt; nums[middle] &amp;&amp; target &lt;= nums[end]) &#123;</span><br><span class="line">                    start = middle + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    end = middle - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 到最後範圍會縮到最小，起點值和目標值一定會重疊，就回傳索引</span></span><br><span class="line">        <span class="keyword">return</span> nums[start] == target ? start : -<span class="number">1</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三種解法是使用鏈表的特性，在鏈表內的元素不會有重複，有重複的話會形成一個環</p>
+<blockquote>
+<ul>
+<li>把當前的元素，當成下一個元素的 index，變成一個類似 linked list 的鏈表</li>
+<li>然後設定一組快慢指針，慢指針走一步，快指針走兩步，在鏈表中有重複的元素，快指針會先走到有重複元素的環內，慢指針也會走到有重複元素的環內，這時如果快慢指針都走到相同的元素，代表這個元素就是我們要找的重複的元素</li>
+<li>例如走過 2 這個元素，後面又再次遇到 2 的時候，代表 2 是重複的元素，然而會形成一個環，在這個有重複元素的還內一直打轉</li>
+<li>另外設定第三個指針檢查，用意是找出環的頭，無論用慢指針或快指針去和檢查指針比對都行，快慢指針是一樣的元素</li>
+</ul>
+</blockquote>
+<div style="display:inline-block;"> <img width="50%" src="https://drive.google.com/uc?export=view&id=1CDg9fLAwgwmes-zUaDo2VfH8hC9q4f9d" alt="" style="float: left; margin-right: 10px;"> </div>
+while 迴圈從 0 開始走，到 3 的時候已經遇到一個 2 了，繼續走到 4 的時候又遇到一個 2
 
-<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法<br>不一樣的點是變數的宣告方式不一樣，還有 Java 和 Python 的三元運算寫法不一樣</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"></span><br><span class="line">        start, end  = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span> <span class="comment"># 起點、終點</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> start &lt; end:</span><br><span class="line">            middle = start + (end - start) // <span class="number">2</span> <span class="comment"># 中間點</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 中間點是答案就回傳</span></span><br><span class="line">            <span class="keyword">if</span> nums[middle] == target </span><br><span class="line">                <span class="keyword">return</span> middle </span><br><span class="line"></span><br><span class="line">                <span class="comment"># 判斷左半邊是有序的</span></span><br><span class="line">                <span class="keyword">if</span> nums[start] &lt;= nums[middle]:</span><br><span class="line">                    <span class="comment"># 如果 target 在左半邊的範圍內，則繼續在左半邊進行搜尋</span></span><br><span class="line">                    <span class="keyword">if</span> nums[start] &lt;= target <span class="keyword">and</span> target &lt; nums[middle]:</span><br><span class="line">                    end = middle - <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>: </span><br><span class="line">                    start = middle + <span class="number">1</span> <span class="comment"># 否則，轉向右半邊進行搜尋</span></span><br><span class="line">            <span class="comment"># 否則，右半邊是有序的</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> nums[middle] &lt; target <span class="keyword">and</span> target &lt;= nums[end]:</span><br><span class="line">                    start = middle + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    end = middle - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果 start == target 回傳 start 否則回傳 -1</span></span><br><span class="line">        <span class="keyword">return</span> start <span class="keyword">if</span> nums[start] == target <span class="keyword">else</span> -<span class="number">1</span> </span><br></pre></td></tr></table></figure>
+<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 暴力的解法是利用雙迴圈，找出相等的元素後就是答案，結果超過時間限制 (不採用)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findDuplicate</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] == nums[j])&#123;</span><br><span class="line">                    <span class="keyword">return</span> nums[i];</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 另一種解法，運用 HashSet 方法的特性，找出不能出現的元素</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findDuplicate</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;(); <span class="comment">// 集合</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums) &#123;</span><br><span class="line">            <span class="comment">// 添加進去時會判斷有沒有 (重複元素不會被添加)</span></span><br><span class="line">            <span class="keyword">if</span>(!set.add(num)) &#123;</span><br><span class="line">                <span class="keyword">return</span> num; <span class="comment">// 回傳當下這個元素</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三種解法是使用鏈表的特性，在鏈表內的元素不會有重複，有重複的話會形成一個環</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findDuplicate</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 慢指針</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">fast</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 快指針</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">check</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 確認指針</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">while</span>( <span class="literal">true</span> )&#123;</span><br><span class="line">            slow = nums[slow]; <span class="comment">// 取得 index 位置(走一步)</span></span><br><span class="line">            fast = nums[nums[fast]]; <span class="comment">// 取得 index 位置後，從位置再取一次新的位置 (等於走兩步)</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 如果快慢指針一樣</span></span><br><span class="line">            <span class="keyword">if</span>( slow == fast )&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 找出循環的頭</span></span><br><span class="line">        <span class="keyword">while</span>( <span class="literal">true</span> )&#123;</span><br><span class="line">            slow = nums[slow];</span><br><span class="line">            check = nums[check]; <span class="comment">// 檢查指針</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 如果慢指針和檢查指針一樣</span></span><br><span class="line">            <span class="keyword">if</span>( slow == check )&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> check;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        </span><br><span class="line">        slow = <span class="number">0</span></span><br><span class="line">        fast = <span class="number">0</span></span><br><span class="line">        check = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            slow = nums[slow] <span class="comment"># 取得 index 位置(走一步)</span></span><br><span class="line">            fast = nums[nums[fast]] <span class="comment"># 取得 index 位置後，從位置再取一次新的位置 (等於走兩步)</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果快慢指針一樣</span></span><br><span class="line">            <span class="keyword">if</span> slow == fast:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 找出循環的頭</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            slow = nums[slow]</span><br><span class="line">            check = nums[check]</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果慢指針和檢查指針一樣</span></span><br><span class="line">            <span class="keyword">if</span> slow == check:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> check</span><br></pre></td></tr></table></figure>
 
 <h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table>
 <thead>
@@ -336,13 +344,13 @@
 </thead>
 <tbody><tr>
 <td>Java</td>
-<td>0ms</td>
-<td>41.2MB</td>
+<td>4ms</td>
+<td>59.49MB</td>
 </tr>
 <tr>
 <td>Python</td>
-<td>54ms</td>
-<td>16.75MB</td>
+<td>520ms</td>
+<td>30.95MB</td>
 </tr>
 </tbody></table>
 
@@ -355,7 +363,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Top-100-Liked-Questions/" rel="tag"># Top 100 Liked Questions</a>
-              <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
               <a href="/tags/Java/" rel="tag"># Java</a>
               <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
@@ -366,13 +373,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/" rel="prev" title="[LeetCode] 215. Kth Largest Element in an Array">
-      <i class="fa fa-chevron-left"></i> [LeetCode] 215. Kth Largest Element in an Array
+    <a href="/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/" rel="prev" title="[LeetCode] 56. Merge Intervals">
+      <i class="fa fa-chevron-left"></i> [LeetCode] 56. Merge Intervals
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/08/08/LeetCode-200-Number-of-Islands-Java-Python/" rel="next" title="[LeetCode] 200. Number of Islands">
-      [LeetCode] 200. Number of Islands <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -643,9 +647,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/";
-    this.page.identifier = "2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/";
-    this.page.title = "[LeetCode] 33. Search in Rotated Sorted Array";
+    this.page.url = "https://chris81051.github.io/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/";
+    this.page.identifier = "2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/";
+    this.page.title = "[LeetCode] 287. Find the Duplicate Number";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
