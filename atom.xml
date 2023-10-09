@@ -134,9 +134,9 @@
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
     
-    <category term="DFS" scheme="https://chris81051.github.io/tags/DFS/"/>
-    
     <category term="Recursion" scheme="https://chris81051.github.io/tags/Recursion/"/>
+    
+    <category term="DFS" scheme="https://chris81051.github.io/tags/DFS/"/>
     
   </entry>
   
@@ -198,9 +198,9 @@
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
     
-    <category term="Recursion" scheme="https://chris81051.github.io/tags/Recursion/"/>
-    
     <category term="QuickSort" scheme="https://chris81051.github.io/tags/QuickSort/"/>
+    
+    <category term="Recursion" scheme="https://chris81051.github.io/tags/Recursion/"/>
     
   </entry>
   

@@ -303,7 +303,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/tags/DFS/</loc>
+    <loc>https://chris81051.github.io/tags/QuickSort/</loc>
     <lastmod>2023-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/tags/QuickSort/</loc>
+    <loc>https://chris81051.github.io/tags/DFS/</loc>
     <lastmod>2023-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -354,6 +354,13 @@
 
   
   <url>
+    <loc>https://chris81051.github.io/categories/Hexo/</loc>
+    <lastmod>2023-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://chris81051.github.io/categories/LeetCode/</loc>
     <lastmod>2023-10-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -362,13 +369,6 @@
   
   <url>
     <loc>https://chris81051.github.io/categories/LeetCode/Array/</loc>
-    <lastmod>2023-10-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chris81051.github.io/categories/LeetCode/Array/Medium/</loc>
     <lastmod>2023-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -389,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/categories/Hexo/</loc>
+    <loc>https://chris81051.github.io/categories/LeetCode/Array/Medium/</loc>
     <lastmod>2023-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
