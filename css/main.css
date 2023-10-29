@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff21;
+  background: #8b5ce2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1584,6 +1584,20 @@ pre .javascript .function {
   line-height: 1;
   margin: -20px auto 15px;
   text-align: center;
+}
+.post-body .travel-image-link {
+  margin: 10px auto 10px;
+}
+.post-body .travel-image-title {
+  color: #3c3c3c;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  margin: -16px auto 1px;
+  text-align: center;
+}
+.post-body table td {
+  border: 3px double #96d4d4;
 }
 .post-sticky-flag {
   display: inline-block;
