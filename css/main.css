@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8b5ce2;
+  background: #2ad52a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1596,8 +1596,12 @@ pre .javascript .function {
   margin: -16px auto 1px;
   text-align: center;
 }
-.post-body table td {
+.post-body .travel-image-table {
   border: 3px double #96d4d4;
+}
+.post-body .travel-image-td {
+  border: 3px double #96d4d4;
+  width: 25%;
 }
 .post-sticky-flag {
   display: inline-block;
