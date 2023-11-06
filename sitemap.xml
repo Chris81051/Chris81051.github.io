@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chris81051.github.io/tags/index.html</loc>
+    <loc>https://chris81051.github.io/travel/index.html</loc>
     
     <lastmod>2023-11-06</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/travel/index.html</loc>
+    <loc>https://chris81051.github.io/tags/index.html</loc>
     
     <lastmod>2023-11-06</lastmod>
     
@@ -309,13 +309,6 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/tags/Dynamic-Programming/</loc>
-    <lastmod>2023-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chris81051.github.io/tags/Greedy/</loc>
     <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -324,6 +317,13 @@
   
   <url>
     <loc>https://chris81051.github.io/tags/Two-Pointers/</loc>
+    <lastmod>2023-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chris81051.github.io/tags/Dynamic-Programming/</loc>
     <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -451,14 +451,14 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/categories/%E5%8F%B0%E5%8C%97/</loc>
+    <loc>https://chris81051.github.io/categories/LeetCode/Linked-List/Easy/</loc>
     <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/categories/LeetCode/Linked-List/Easy/</loc>
+    <loc>https://chris81051.github.io/categories/%E5%8F%B0%E5%8C%97/</loc>
     <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
