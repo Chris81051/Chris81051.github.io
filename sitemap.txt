@@ -1,3 +1,4 @@
+https://chris81051.github.io/tags/index.html
 https://chris81051.github.io/travel/index.html
 https://chris81051.github.io/2023/10/29/20231029-Taipei-Zhongshan-night-view-Breeze-platform/
 https://chris81051.github.io/about/index.html
@@ -7,7 +8,6 @@ https://chris81051.github.io/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-J
 https://chris81051.github.io/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/
 https://chris81051.github.io/2023/08/08/LeetCode-200-Number-of-Islands-Java-Python/
 https://chris81051.github.io/2023/08/01/LeetCode-33-Search-in-Rotated-Sorted-Array-Java-Python/
-https://chris81051.github.io/tags/index.html
 https://chris81051.github.io/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/
 https://chris81051.github.io/2023/06/29/LeetCode-206-Reverse-Linked-List-Java-Python/
 https://chris81051.github.io/2023/06/26/LeetCode-11-Container-With-Most-Water-Java-Python/
@@ -33,10 +33,10 @@ https://chris81051.github.io/tags/%E5%B1%B1%E5%8D%80/
 https://chris81051.github.io/tags/%E5%A4%9C%E6%99%AF/
 https://chris81051.github.io/tags/%E7%B4%84%E6%9C%83/
 https://chris81051.github.io/tags/Top-100-Liked-Questions/
-https://chris81051.github.io/tags/Dynamic-Programming/
+https://chris81051.github.io/tags/Hash-Table/
 https://chris81051.github.io/tags/Java/
 https://chris81051.github.io/tags/Python/
-https://chris81051.github.io/tags/Hash-Table/
+https://chris81051.github.io/tags/Dynamic-Programming/
 https://chris81051.github.io/tags/Greedy/
 https://chris81051.github.io/tags/Two-Pointers/
 https://chris81051.github.io/tags/DFS/
@@ -53,6 +53,6 @@ https://chris81051.github.io/categories/%E5%8F%B0%E5%8C%97/%E4%B8%AD%E5%B1%B1/
 https://chris81051.github.io/categories/LeetCode/Array/
 https://chris81051.github.io/categories/LeetCode/Linked-List/
 https://chris81051.github.io/categories/LeetCode/Array/Medium/
-https://chris81051.github.io/categories/LeetCode/Array/Easy/
 https://chris81051.github.io/categories/Spring-Boot/
+https://chris81051.github.io/categories/LeetCode/Array/Easy/
 https://chris81051.github.io/categories/LeetCode/Linked-List/Easy/
