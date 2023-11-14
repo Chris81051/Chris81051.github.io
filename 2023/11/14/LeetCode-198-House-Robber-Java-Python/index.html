@@ -29,23 +29,23 @@
 
   gtag('config', 'G-DQ8D0CJFGG');
 </script>
-  <meta name="description" content="這題運用雙指針來實作，目標是把陣列中的元素重疊的部分合併起來">
+  <meta name="description" content="這題是一題動態規劃問題，目標是擷取不連續的元素，全部相加起來選出最優解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 56. Merge Intervals">
-<meta property="og:url" content="https://chris81051.github.io/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/index.html">
+<meta property="og:title" content="[LeetCode] 198. House Robber">
+<meta property="og:url" content="https://chris81051.github.io/2023/11/14/LeetCode-198-House-Robber-Java-Python/index.html">
 <meta property="og:site_name" content="Chris&#39;s Lab">
-<meta property="og:description" content="這題運用雙指針來實作，目標是把陣列中的元素重疊的部分合併起來">
+<meta property="og:description" content="這題是一題動態規劃問題，目標是擷取不連續的元素，全部相加起來選出最優解">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-08-27T07:01:22.000Z">
-<meta property="article:modified_time" content="2023-08-27T07:01:22.000Z">
+<meta property="article:published_time" content="2023-11-14T07:59:41.000Z">
+<meta property="article:modified_time" content="2023-11-14T07:59:41.000Z">
 <meta property="article:author" content="Chris">
 <meta property="article:tag" content="Top 100 Liked Questions">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Python">
-<meta property="article:tag" content="Recursion">
+<meta property="article:tag" content="Dynamic Programming">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chris81051.github.io/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/">
+<link rel="canonical" href="https://chris81051.github.io/2023/11/14/LeetCode-198-House-Robber-Java-Python/">
 
 
 <script id="page-configurations">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title>[LeetCode] 56. Merge Intervals | Chris's Lab</title>
+  <title>[LeetCode] 198. House Robber | Chris's Lab</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ8D0CJFGG"></script>
     <script>
@@ -212,7 +212,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/">
+    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/11/14/LeetCode-198-House-Robber-Java-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://drive.google.com/uc?export=view&id=1vRmbhAemSAwPDo0DQ7gRulglOxJcJHb9">
@@ -225,7 +225,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode] 56. Merge Intervals
+          [LeetCode] 198. House Robber
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2023-08-27 15:01:22" itemprop="dateCreated datePublished" datetime="2023-08-27T15:01:22+08:00">2023-08-27</time>
+              <time title="創建時間：2023-11-14 15:59:41" itemprop="dateCreated datePublished" datetime="2023-11-14T15:59:41+08:00">2023-11-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,13 +271,13 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2023/11/14/LeetCode-198-House-Robber-Java-Python/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/11/14/LeetCode-198-House-Robber-Java-Python/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">這題運用雙指針來實作，目標是把陣列中的元素重疊的部分合併起來</div>
+            <div class="post-description">這題是一題動態規劃問題，目標是擷取不連續的元素，全部相加起來選出最優解</div>
 
         </div>
       </header>
@@ -288,35 +288,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題運用雙指針來實作，目標是把陣列中的元素重疊的部分合併起來，有使用到合併和排序的演算法，時間複雜度估為 <code>O(n log n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這題是一題動態規劃問題，目標是擷取不連續的元素，全部相加起來選出最優解，因只用了一層迴圈，時間複雜度可估 <code>O(n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
 <h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><blockquote>
-<p>Given an array of <code>intervals</code> where <code>intervals[i] = [starti, endi]</code>, merge all overlapping intervals, and return <em>an array of the non-overlapping intervals that cover all the intervals in the input</em>.</p>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and <strong>it will automatically contact the police if two adjacent houses were broken into on the same night</strong>.</p>
+<p>Given an integer array <code>nums</code> representing the amount of money of each house, return <em>the maximum amount of money you can rob tonight <strong>without alerting the police</strong></em>.</p>
 </blockquote>
 <blockquote>
-<p>給定一個陣列 <code>intervals</code> 其中，間隔在 <code>intervals[i] = [starti, endi]</code>，合併全部有重疊的間隔，並回傳覆蓋輸入中所有區間的非重疊區間的陣列。</p>
+<p>你是一個專業的小偷，計畫了搶劫街道上的房子，每個房子藏有一定數量的錢，阻止你的唯一條件是房子之間有相連的安全系統，如果相連的房子同一晚被闖入，就會通知警方。</p>
+<p>給定一個整數陣列 <code>nums</code> 代表每一間房子的金額，回傳擷取最高的金額且沒有驚動警察。</p>
 </blockquote>
-<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-intervals/">https://leetcode.com/problems/merge-intervals/</a></p>
-<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= intervals.length &lt;= 104</code><br><code>intervals[i].length == 2</code><br><code>0 &lt;= starti &lt;= endi &lt;= 104</code></p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[<span class="number">1</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">6</span>],[<span class="number">8</span>,<span class="number">10</span>],[<span class="number">15</span>,<span class="number">18</span>]]</span><br><span class="line">Output: [[<span class="number">1</span>,<span class="number">6</span>],[<span class="number">8</span>,<span class="number">10</span>],[<span class="number">15</span>,<span class="number">18</span>]]</span><br><span class="line">Explanation: Since intervals [<span class="number">1</span>,<span class="number">3</span>] and [<span class="number">2</span>,<span class="number">6</span>] overlap, merge them into [<span class="number">1</span>,<span class="number">6</span>].</span><br></pre></td></tr></table></figure>
+<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/house-robber/">https://leetcode.com/problems/house-robber/</a></p>
+<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p><code>1 &lt;= nums.length &lt;= 100</code><br><code>0 &lt;= nums[i] &lt;= 400</code></p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">Output: <span class="number">4</span></span><br><span class="line">Explanation: Rob house <span class="number">1</span> (money = <span class="number">1</span>) and then rob house <span class="number">3</span> (money = <span class="number">3</span>).</span><br><span class="line">Total amount you <span class="type">can</span> <span class="variable">rob</span> <span class="operator">=</span> <span class="number">1</span> + <span class="number">3</span> = <span class="number">4.</span></span><br></pre></td></tr></table></figure>
 
-<p>區間 [ 1, 3 ] 和 [ 2, 6 ] 重疊，將它們合併為 [ 1, 6 ]</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[<span class="number">1</span>,<span class="number">4</span>],[<span class="number">4</span>,<span class="number">5</span>]]</span><br><span class="line">Output: [[<span class="number">1</span>,<span class="number">5</span>]]</span><br><span class="line">Explanation: Intervals [<span class="number">1</span>,<span class="number">4</span>] and [<span class="number">4</span>,<span class="number">5</span>] are considered overlapping.</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">Output: <span class="number">12</span></span><br><span class="line">Explanation: Rob house <span class="number">1</span> (money = <span class="number">2</span>), rob house <span class="number">3</span> (money = <span class="number">9</span>) and rob house <span class="number">5</span> (money = <span class="number">1</span>).</span><br><span class="line">Total amount you <span class="type">can</span> <span class="variable">rob</span> <span class="operator">=</span> <span class="number">2</span> + <span class="number">9</span> + <span class="number">1</span> = <span class="number">12.</span></span><br></pre></td></tr></table></figure>
 
-<p>區間 [ 1, 4 ] 和 [ 4, 5 ] 可被視為重疊區間</p>
-<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><blockquote>
-<ul>
-<li>將原始的陣列做升序排序</li>
-<li>宣告一個 res (來裝判斷過的元素)</li>
-<li>把 intervals 的第一個元素裝入 res</li>
-<li>for 迴圈從 intervals 第二個元素開始循環</li>
-<li>如果 res 最後一個元素後面的值 ≥ intervals 第二個元素前面的值的話</li>
-<li>將 intervals 第二個元素後面的值比較 res 最後一個元素後面的值，取較大的值合併</li>
+<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><ul>
+<li>擷取不連續的元素，全部相加起來，這歸類在動態規劃的想法，是利用先前的計算結果來推導目前的最優解。</li>
+<li>我們將兩個變數 rob 和 notrob，分別表示如果搶當前房屋和不搶當前房屋時，能夠得到的最大金額。</li>
+<li>在遍歷每個房屋時，透過更新這兩個變數，計算出最終的最大金額。</li>
 </ul>
-</blockquote>
-<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] merge(<span class="type">int</span>[][] intervals) &#123;</span><br><span class="line">        <span class="keyword">if</span> (intervals == <span class="literal">null</span> || intervals.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> intervals;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        List&lt;<span class="type">int</span>[]&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(); <span class="comment">// 初始化陣列 (因為不知道陣列元素有幾個)</span></span><br><span class="line">        Arrays.sort(intervals, (a, b) -&gt; (a[<span class="number">0</span>] - b[<span class="number">0</span>])); <span class="comment">// 把陣列排成升序</span></span><br><span class="line">        res.add(intervals[<span class="number">0</span>]); <span class="comment">// 添加陣列第一個區間 res = [[1,3]]</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 原本的陣列從第二個開始循環比較</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; intervals.lenght - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 如果有重疊的話</span></span><br><span class="line">            <span class="keyword">if</span> (res.get(res.size() - <span class="number">1</span>)[<span class="number">1</span>] &gt;= intervals[i][<span class="number">0</span>]) &#123;</span><br><span class="line">                res.get(res.size() - <span class="number">1</span>)[<span class="number">1</span>] = Math.max(res.get(res.size() - <span class="number">1</span>)[<span class="number">1</span>], intervals[i][<span class="number">1</span>]); <span class="comment">// 取較大的值合併</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res.add(intervals[i]); <span class="comment">// 沒有重疊，直接加入結果列表</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">return</span> res.toArray(<span class="keyword">new</span> <span class="title class_">int</span>[res.size()][]); <span class="comment">// 沒有重疊，轉成陣列輸出</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">rob</span><span class="params">(<span class="type">int</span>[] num)</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">rob</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 搶當前的房子的最大金額</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">notrob</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 不搶當前的房子的最大金額</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">currob</span> <span class="operator">=</span> notrob + nums[i]; <span class="comment">// 0 + 當前房子 (如果搶了當前房子就不能搶前一個房子)</span></span><br><span class="line">        notrob = Math.max(notrob, rob); <span class="comment">// 不搶當前的房子和搶當前的房子比較 (因為在不搶目前房屋的情況下，可以選擇搶或不搶上一個房屋，所以要取最大值)</span></span><br><span class="line">        rob = currob; <span class="comment">// 搶當前的房子的最大金額</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Math.max(rob, notrob); <span class="comment">// 最後選出最大的金額</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">merge</span>(<span class="params">self, intervals: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line"></span><br><span class="line">        intervals.sort()  <span class="comment"># 對區間列表進行排序</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 準備一個容器來裝合併的元素 (索引 0 先放進去)</span></span><br><span class="line">        res = [intervals[<span class="number">0</span>]]  <span class="comment"># 添加陣列第一個區間 res = [[1,3]]</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 原本的陣列從第二個開始循環比較</span></span><br><span class="line">        <span class="comment"># intervals[1:]</span></span><br><span class="line">        <span class="comment"># Iteration 1: start = 2, end = 6</span></span><br><span class="line">        <span class="comment"># Iteration 2: start = 8, end = 10</span></span><br><span class="line">        <span class="comment"># Iteration 3: start = 15, end = 18</span></span><br><span class="line">        <span class="keyword">for</span> start, end <span class="keyword">in</span> intervals[<span class="number">1</span>:]:</span><br><span class="line">            <span class="comment"># 如果有重疊</span></span><br><span class="line">            <span class="keyword">if</span> res[-<span class="number">1</span>][<span class="number">1</span>] &gt;= start:</span><br><span class="line">                res[-<span class="number">1</span>][<span class="number">1</span>] = <span class="built_in">max</span>(res[-<span class="number">1</span>][<span class="number">1</span>], end)  <span class="comment"># 取較大的值合併</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res.append([start, end])  <span class="comment"># 沒有重疊，直接加入結果列表</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rob</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        </span><br><span class="line">        rob = <span class="number">0</span></span><br><span class="line">        not_rob = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            cur_rob = not_rob + num</span><br><span class="line">            not_rob, rob = <span class="built_in">max</span>(not_rob, rob), cur_rob</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(rob, not_rob)</span><br></pre></td></tr></table></figure>
 
 <h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table>
 <thead>
@@ -328,13 +323,13 @@
 </thead>
 <tbody><tr>
 <td>Java</td>
-<td>7ms</td>
-<td>45.34MB</td>
+<td>0ms</td>
+<td>40.62MB</td>
 </tr>
 <tr>
 <td>Python</td>
-<td>130ms</td>
-<td>21.40MB</td>
+<td>48ms</td>
+<td>16.33MB</td>
 </tr>
 </tbody></table>
 
@@ -350,7 +345,7 @@
               <a href="/tags/Top-100-Liked-Questions/" rel="tag"><i class="fa fa-tag"></i> Top 100 Liked Questions</a>
               <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
               <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-              <a href="/tags/Recursion/" rel="tag"><i class="fa fa-tag"></i> Recursion</a>
+              <a href="/tags/Dynamic-Programming/" rel="tag"><i class="fa fa-tag"></i> Dynamic Programming</a>
           </div>
 
         
@@ -359,13 +354,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/08/08/LeetCode-200-Number-of-Islands-Java-Python/" rel="prev" title="[LeetCode] 200. Number of Islands">
-      <i class="fa fa-chevron-left"></i> [LeetCode] 200. Number of Islands
+    <a href="/2023/10/29/Travel-Taipei-Zhongshan-night-view-Breeze-platform/" rel="prev" title="台北 | 中山 | 夜景　微風平台">
+      <i class="fa fa-chevron-left"></i> 台北 | 中山 | 夜景　微風平台
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/" rel="next" title="[LeetCode] 287. Find the Duplicate Number">
-      [LeetCode] 287. Find the Duplicate Number <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -635,9 +627,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://chris81051.github.io/2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/";
-    this.page.identifier = "2023/08/27/LeetCode-56-Merge-Intervals-Java-Python/";
-    this.page.title = "[LeetCode] 56. Merge Intervals";
+    this.page.url = "https://chris81051.github.io/2023/11/14/LeetCode-198-House-Robber-Java-Python/";
+    this.page.identifier = "2023/11/14/LeetCode-198-House-Robber-Java-Python/";
+    this.page.title = "[LeetCode] 198. House Robber";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
