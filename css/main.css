@@ -271,10 +271,10 @@ video {
   max-width: 100%;
 }
 hr {
-  background-image: repeating-linear-gradient(-45deg, #ddd, #ddd 4px, transparent 4px, transparent 8px);
-  border: 0;
-  height: 3px;
-  margin: 40px 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #eee;
+  margin: -13px 0 10px 0;
 }
 blockquote {
   border-left: 4px solid #ddd;
@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #385200;
+  background: #6e4ee5;
   border-radius: 50%;
   content: ' ';
   display: inline-block;

@@ -290,16 +290,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　這是一題單向鏈結串列反轉的題目，運用指標的算法，目標是將原本的鏈結串列倒序排列，此演算有使用到一個 while 迴圈，則時間複雜度估 <code>O(n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
-<h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><blockquote>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
+<p>　　這是一題單向鏈結串列反轉的題目，運用指標的算法，目標是將原本的鏈結串列倒序排列，此演算有使用到一個 while 迴圈，則時間複雜度估 <code>O(n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
+<h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><hr>
+<blockquote>
 <p>Given the <code>head</code> of a singly linked list, reverse the list, and return <em>the reversed list</em>.</p>
 </blockquote>
 <blockquote>
 <p>給定一個 <code>head</code> 單向鏈結串列，反轉這個串列，且回傳反轉過後的這個串列。</p>
 </blockquote>
 <p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-linked-list/description/">https://leetcode.com/problems/reverse-linked-list/description/</a></p>
-<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><p>The number of nodes in the list is the range <code>[0, 5000]</code>.<br><code>5000 &lt;= Node.val &lt;= 5000</code></p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><div style="display:inline-block;"> <img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" alt="Reverse" style="float: left; margin-right: 10px;"> </div>
+<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><hr>
+<p>The number of nodes in the list is the range <code>[0, 5000]</code>.<br><code>5000 &lt;= Node.val &lt;= 5000</code></p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><hr>
+<div style="display:inline-block;"> <img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" alt="Reverse" style="float: left; margin-right: 10px;"> </div>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Output: [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 
@@ -309,7 +313,8 @@
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = []</span><br><span class="line">Output: []</span><br></pre></td></tr></table></figure>
 
-<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><p>鏈結串列的題目，簡單想像是在處理節點的位置，資料先放一邊別去裡他。<br>這裡設定三個指標分別是指向 null 的 (指標一)、指向當前 head 的 (指標二)、輔助指標 nextNode (指標三)。</p>
+<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><hr>
+<p>鏈結串列的題目，簡單想像是在處理節點的位置，資料先放一邊別去裡他。<br>這裡設定三個指標分別是指向 null 的 (指標一)、指向當前 head 的 (指標二)、輔助指標 nextNode (指標三)。</p>
 <blockquote>
 <ul>
 <li>設定好三個指標後</li>
@@ -321,12 +326,15 @@
 </ul>
 </blockquote>
 <p>[補充] <code>curr.next</code> 同等於 <code>curr → link</code> (指向下一個節點的意思)</p>
-<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curr</span> <span class="operator">=</span> head; <span class="comment">// 當前指標 (指標一)</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">prev</span> <span class="operator">=</span> <span class="literal">null</span>; <span class="comment">// 空集合指標 (指標二)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 檢查確定鏈結串列裡有資料</span></span><br><span class="line">        <span class="keyword">while</span> (curr != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">nextNode</span> <span class="operator">=</span> curr.next; <span class="comment">// 輔助指標 (指標三)，指向下一個節點 (資料暫存在輔助指標內)</span></span><br><span class="line">            curr.next = prev; <span class="comment">// 將 curr 的 next 指針指向 prev，(將當前節點的指針方向反轉)</span></span><br><span class="line">            prev = curr; <span class="comment">// 更新指針指向：將 prev 設為 curr</span></span><br><span class="line">            curr = nextNode; <span class="comment">// curr 設為 nextNode</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curr</span> <span class="operator">=</span> head; <span class="comment">// 當前指標 (指標一)</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">prev</span> <span class="operator">=</span> <span class="literal">null</span>; <span class="comment">// 空集合指標 (指標二)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 檢查確定鏈結串列裡有資料</span></span><br><span class="line">        <span class="keyword">while</span> (curr != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">nextNode</span> <span class="operator">=</span> curr.next; <span class="comment">// 輔助指標 (指標三)，指向下一個節點 (資料暫存在輔助指標內)</span></span><br><span class="line">            curr.next = prev; <span class="comment">// 將 curr 的 next 指針指向 prev，(將當前節點的指針方向反轉)</span></span><br><span class="line">            prev = curr; <span class="comment">// 更新指針指向：將 prev 設為 curr</span></span><br><span class="line">            curr = nextNode; <span class="comment">// curr 設為 nextNode</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。<br>(Python 中不需要再宣告一個額外的變數來存儲原始的鏈結串列)</p>
+<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><hr>
+<p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。<br>(Python 中不需要再宣告一個額外的變數來存儲原始的鏈結串列)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">			</span><br><span class="line">        prev = <span class="literal">None</span> <span class="comment"># 空集合指標 (指標一)</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            nextNode = head.<span class="built_in">next</span> <span class="comment"># 輔助指標 (指標二)</span></span><br><span class="line">            head.<span class="built_in">next</span> = prev <span class="comment"># 反轉</span></span><br><span class="line">            prev = head <span class="comment"># 移動指標</span></span><br><span class="line">            head = nextNode <span class="comment"># 掛回去原本的鏈結串列</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> prev</span><br></pre></td></tr></table></figure>
 
-<h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table>
+<h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><hr>
+<table>
 <thead>
 <tr>
 <th>Language</th>
