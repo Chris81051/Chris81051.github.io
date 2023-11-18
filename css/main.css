@@ -271,7 +271,7 @@ video {
   max-width: 100%;
 }
 hr {
-  border-style: solid;
+  border-style: #eee;
   border-width: 1px;
   border-color: #eee;
   margin: -13px 0 10px 0;
@@ -447,7 +447,7 @@ code {
   font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
 }
 code {
-  background: #f0f0f0;
+  background: #eee;
   border-radius: 3px;
   color: #e96900;
   padding: 2px 4px;
@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffa4ff;
+  background: #ff8398;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
