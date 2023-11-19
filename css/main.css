@@ -449,7 +449,7 @@ code {
 code {
   background: #eee;
   border-radius: 3px;
-  color: #e96900;
+  color: #fc6423;
   padding: 2px 4px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff8398;
+  background: #abbd12;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1742,7 +1742,7 @@ pre .javascript .function {
   height: 1px;
   margin: 80px auto 60px;
   text-align: center;
-  width: 8%;
+  width: 100%;
 }
 .post-block:last-of-type .post-eof {
   display: none;
