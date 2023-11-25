@@ -348,7 +348,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/tags/QuickSort/</loc>
+    <loc>https://chris81051.github.io/tags/DFS/</loc>
     <lastmod>2023-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -362,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/tags/DFS/</loc>
+    <loc>https://chris81051.github.io/tags/QuickSort/</loc>
     <lastmod>2023-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -441,7 +441,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/categories/LeetCode/Array/Medium/</loc>
+    <loc>https://chris81051.github.io/categories/LeetCode/Linked-List/</loc>
     <lastmod>2023-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -455,7 +455,7 @@
   </url>
   
   <url>
-    <loc>https://chris81051.github.io/categories/LeetCode/Linked-List/</loc>
+    <loc>https://chris81051.github.io/categories/LeetCode/Array/Medium/</loc>
     <lastmod>2023-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -463,13 +463,6 @@
   
   <url>
     <loc>https://chris81051.github.io/categories/%E5%8F%B0%E5%8C%97/</loc>
-    <lastmod>2023-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chris81051.github.io/categories/Spring-Boot/</loc>
     <lastmod>2023-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -484,6 +477,13 @@
   
   <url>
     <loc>https://chris81051.github.io/categories/LeetCode/Linked-List/Easy/</loc>
+    <lastmod>2023-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chris81051.github.io/categories/Spring-Boot/</loc>
     <lastmod>2023-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
