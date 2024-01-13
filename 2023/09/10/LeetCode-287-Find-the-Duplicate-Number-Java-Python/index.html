@@ -36,7 +36,7 @@
 <meta property="og:site_name" content="Chris&#39;s Lab">
 <meta property="og:description" content="這題是一題把陣列當成類似 linked list 的題目，目標是找到陣列中重複的元素">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1CDg9fLAwgwmes-zUaDo2VfH8hC9q4f9d">
+<meta property="og:image" content="https://i.imgur.com/LYhEQC6.png">
 <meta property="article:published_time" content="2023-09-10T15:35:30.000Z">
 <meta property="article:modified_time" content="2023-09-10T15:35:30.000Z">
 <meta property="article:author" content="Chris">
@@ -44,7 +44,7 @@
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=1CDg9fLAwgwmes-zUaDo2VfH8hC9q4f9d">
+<meta name="twitter:image" content="https://i.imgur.com/LYhEQC6.png">
 
 <link rel="canonical" href="https://chris81051.github.io/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/">
 
@@ -221,7 +221,7 @@
     <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/09/10/LeetCode-287-Find-the-Duplicate-Number-Java-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://drive.google.com/uc?export=view&id=1vRmbhAemSAwPDo0DQ7gRulglOxJcJHb9">
+      <meta itemprop="image" content="https://i.imgur.com/9JZFlTO.png">
       <meta itemprop="name" content="Chris">
       <meta itemprop="description" content="Full-Stack Engineer｜Web Design I'm Taiwanese based in Taipei">
     </span>
@@ -331,9 +331,11 @@
 <li>另外設定第三個指針檢查，用意是找出環的頭，無論用慢指針或快指針去和檢查指針比對都行，快慢指針是一樣的元素</li>
 </ul>
 </blockquote>
-<div style="display:inline-block;"> <img width="50%" src="https://drive.google.com/uc?export=view&id=1CDg9fLAwgwmes-zUaDo2VfH8hC9q4f9d" alt="" style="float: left; margin-right: 10px;"> </div>
-while 迴圈從 0 開始走，到 3 的時候已經遇到一個 2 了，繼續走到 4 的時候又遇到一個 2
+<div style="display:inline-block;"> 
+    <img width="50%" src="https://i.imgur.com/LYhEQC6.png" alt="" style="float: left; margin-right: 10px;"> 
+</div>
 
+<p>while 迴圈從 0 開始走，到 3 的時候已經遇到一個 2 了，繼續走到 4 的時候又遇到一個 2</p>
 <h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><hr>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 暴力的解法是利用雙迴圈，找出相等的元素後就是答案，結果超過時間限制 (不採用)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findDuplicate</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] == nums[j])&#123;</span><br><span class="line">                    <span class="keyword">return</span> nums[i];</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 另一種解法，運用 HashSet 方法的特性，找出不能出現的元素</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findDuplicate</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;(); <span class="comment">// 集合</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums) &#123;</span><br><span class="line">            <span class="comment">// 添加進去時會判斷有沒有 (重複元素不會被添加)</span></span><br><span class="line">            <span class="keyword">if</span>(!set.add(num)) &#123;</span><br><span class="line">                <span class="keyword">return</span> num; <span class="comment">// 回傳當下這個元素</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三種解法是使用鏈表的特性，在鏈表內的元素不會有重複，有重複的話會形成一個環</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findDuplicate</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">slow</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 慢指針</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">fast</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 快指針</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">check</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 確認指針</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">while</span>( <span class="literal">true</span> )&#123;</span><br><span class="line">            slow = nums[slow]; <span class="comment">// 取得 index 位置(走一步)</span></span><br><span class="line">            fast = nums[nums[fast]]; <span class="comment">// 取得 index 位置後，從位置再取一次新的位置 (等於走兩步)</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 如果快慢指針一樣</span></span><br><span class="line">            <span class="keyword">if</span>( slow == fast )&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 找出循環的頭</span></span><br><span class="line">        <span class="keyword">while</span>( <span class="literal">true</span> )&#123;</span><br><span class="line">            slow = nums[slow];</span><br><span class="line">            check = nums[check]; <span class="comment">// 檢查指針</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 如果慢指針和檢查指針一樣</span></span><br><span class="line">            <span class="keyword">if</span>( slow == check )&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> check;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -461,7 +463,7 @@ while 迴圈從 0 開始走，到 3 的時候已經遇到一個 2 了，繼續�
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Chris"
-      src="https://drive.google.com/uc?export=view&id=1vRmbhAemSAwPDo0DQ7gRulglOxJcJHb9">
+      src="https://i.imgur.com/9JZFlTO.png">
   <p class="site-author-name" itemprop="name">Chris</p>
   <div class="site-description" itemprop="description">Full-Stack Engineer｜Web Design I'm Taiwanese based in Taipei</div>
 </div>
@@ -528,7 +530,7 @@ while 迴圈從 0 開始走，到 3 的時候已經遇到一個 2 了，繼續�
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
