@@ -211,6 +211,160 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2024/01/21/Leetcode-34-Find-First-and-last-Position-of-Element-in-Sorted-Array-Java-Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.imgur.com/9JZFlTO.png">
+      <meta itemprop="name" content="Chris">
+      <meta itemprop="description" content="Full-Stack Engineer｜Web Design I'm Taiwanese based in Taipei">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chris's Lab">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/01/21/Leetcode-34-Find-First-and-last-Position-of-Element-in-Sorted-Array-Java-Python/" class="post-title-link" itemprop="url">[LeetCode] 34. Find First and last Position of Element in Sorted Array</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-01-21 14:12:07" itemprop="dateCreated datePublished" datetime="2024-01-21T14:12:07+08:00">2024-01-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/Array/" itemprop="url" rel="index"><span itemprop="name">Array</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/Array/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2024/01/21/Leetcode-34-Find-First-and-last-Position-of-Element-in-Sorted-Array-Java-Python/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/01/21/Leetcode-34-Find-First-and-last-Position-of-Element-in-Sorted-Array-Java-Python/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
+<p>　　這題標準運用了二分搜尋法，演算法通常需要使用二分思想，即每次能夠排除一半的範圍，快速的找出陣列中所要求的元素位置，這樣時間複雜度可達 <code>O(log n)</code>，時間複雜度可達 <code>O(n)</code>，這裡有 JAVA 和 Python 的寫法。</p>
+<h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><hr>
+<blockquote>
+<p>Given an array of integers <code>nums</code> sorted in non-decreasing order, find the starting and ending position of a given <code>target</code> value.<br>If <code>target</code> is not found in the array, return <code>[-1, -1]</code>.<br>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+</blockquote>
+<blockquote>
+<p>給定一個不是降序過後的整數陣列 <code>nums</code>，找到目標值的開始和結束的位置。<br>如果在陣列裡找不到目標，回傳 <code>[-1, -1]</code>。<br>你必須寫出一個時間複雜度 <code>O(log n)</code> 的算法。</p>
+</blockquote>
+<p>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/</a></p>
+<h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><hr>
+<p><code>0 &lt;= nums.length &lt;= 105</code><br><code>109 &lt;= nums[i] &lt;= 109</code><br><code>nums</code> is a non-decreasing array.<br><code>109 &lt;= target &lt;= 109</code></p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">5</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">10</span>], target = <span class="number">8</span></span><br><span class="line">Output: [<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<p>目標值是 8，所以在陣列裡開始和結束的位置是 3 和 4</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">5</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">10</span>], target = <span class="number">6</span></span><br><span class="line">Output: [-<span class="number">1</span>,-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [], target = <span class="number">0</span></span><br><span class="line">Output: [-<span class="number">1</span>,-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><hr>
+<ol>
+<li>設計兩個函數 <code>findFirst</code> 、 <code>findLast</code> 來取得第一個和最後一個符合 target 值的索引。</li>
+<li>兩個函數內都運用了二分搜尋法來找到正確的索引。</li>
+<li>findFirst 函數：<ul>
+<li>如果目標元素 <code>target</code> 小於等於 <code>nums[mid]</code>，則將 <code>end</code> 更新為 <code>mid - 1</code>。</li>
+<li>如果目標元素 <code>target</code> 大於 <code>nums[mid]</code>，則將 <code>start</code> 更新為 <code>mid + 1</code>。</li>
+<li>在找到目標元素時，將 <code>idx</code> 設定為 <code>mid</code>。</li>
+<li>確保在找到目標元素時繼續向左搜尋，以找到第一次出現的位置。</li>
+</ul>
+</li>
+<li>findLast 函數：<ul>
+<li>如果目標元素 <code>target</code> 大於等於 <code>nums[mid]</code>，則將 <code>start</code> 更新為 <code>mid + 1</code>。</li>
+<li>如果目標元素 <code>target</code> 小於 <code>nums[mid]</code>，則將 <code>end</code> 更新為 <code>mid - 1</code>。</li>
+<li>在找到目標元素時，將 <code>idx</code> 設定為 <code>mid</code>。</li>
+<li>確保在找到目標元素時繼續向右搜尋，以找到最後一次出現的位置。</li>
+</ul>
+</li>
+</ol>
+<p>[注意點] 之所以要用上述中間值的寫法會比較安全，因如果 start 和 end 趨近於最大數時，兩者相加起來的合可能會造成整數溢位</p>
+<h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] searchRange(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span>[] result = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        result[<span class="number">0</span>] = findFirst(nums, target); <span class="comment">// target 第一次出現的位置</span></span><br><span class="line">        result[<span class="number">1</span>] = findLast(nums, target); <span class="comment">// target 最後一次出現的位置</span></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findFirst</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">idx</span> <span class="operator">=</span> -<span class="number">1</span>; <span class="comment">// 回傳值</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 起點位置</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> nums.length - <span class="number">1</span>; <span class="comment">// 終點位置</span></span><br><span class="line">        <span class="keyword">while</span>(start &lt;= end)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (start + end) / <span class="number">2</span>; <span class="comment">// 中位數</span></span><br><span class="line">            <span class="comment">// 一直往陣列的左側找到底，找到第一次出現的位置</span></span><br><span class="line">            <span class="keyword">if</span>(target &lt;= nums[mid])&#123;</span><br><span class="line">                end = mid - <span class="number">1</span>; <span class="comment">// 重新定義終點，下次回圈找到新的終點停止</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                start = mid + <span class="number">1</span>; <span class="comment">// 重新定義起點，下次回圈從新的起點開始</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[mid]) &#123; <span class="comment">// 陣列裡確定有 target</span></span><br><span class="line">                idx = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> idx;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findLast</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">idx</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt;= end)&#123;</span><br><span class="line">           <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (start + end) / <span class="number">2</span>;</span><br><span class="line">           <span class="comment">// 一直往陣列的右側找到底，找到最後一次出現的位置</span></span><br><span class="line">           <span class="keyword">if</span>(target &gt;= nums[mid])&#123;</span><br><span class="line">               start = mid + <span class="number">1</span>;</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               end = mid - <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span>(target == nums[mid])&#123;</span><br><span class="line">               idx = mid;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> idx;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><hr>
+<p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">searchRange</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        result = [self.findFirst(nums, target), self.findLast(nums, target)]</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findFirst</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        idx = -<span class="number">1</span></span><br><span class="line">        start, end = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> start &lt;= end:</span><br><span class="line">            mid = (start + end) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> target &lt;= nums[mid]:</span><br><span class="line">                end = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                start = mid + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> target == nums[mid]:</span><br><span class="line">                idx = mid</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> idx</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findLast</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        idx = -<span class="number">1</span></span><br><span class="line">        start, end = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> start &lt;= end:</span><br><span class="line">            mid = (start + end) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> target &gt;= nums[mid]:</span><br><span class="line">                start = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = mid - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> target == nums[mid]:</span><br><span class="line">                idx = mid</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> idx</span><br></pre></td></tr></table></figure>
+
+<h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Runtime</th>
+<th>Memory</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Java</td>
+<td>0ms</td>
+<td>45.74MB</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>75ms</td>
+<td>17.81MB</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/11/25/Travel-Xiaonangang-Mountain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1067,102 +1221,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://chris81051.github.io/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.imgur.com/9JZFlTO.png">
-      <meta itemprop="name" content="Chris">
-      <meta itemprop="description" content="Full-Stack Engineer｜Web Design I'm Taiwanese based in Taipei">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chris's Lab">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/" class="post-title-link" itemprop="url">[LeetCode] 215. Kth Largest Element in an Array</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2023-07-23 16:53:37" itemprop="dateCreated datePublished" datetime="2023-07-23T16:53:37+08:00">2023-07-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/Array/" itemprop="url" rel="index"><span itemprop="name">Array</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/Array/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>解這題最重要的是學習 Quick Sort 快速排序演算法是如何運作</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/07/23/LeetCode-215-Kth-Largest-Element-in-an-Array-Java-Python/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1233,7 +1291,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
