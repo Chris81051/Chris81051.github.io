@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b9ff6f;
+  background: #294660;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1596,12 +1596,30 @@ pre .javascript .function {
   margin: -16px auto 1px;
   text-align: center;
 }
-.post-body .travel-image-table {
+.post-body .table-travel-image {
   border: 3px double #96d4d4;
 }
-.post-body .travel-image-td {
+.post-body .td-travel-name {
+  border: 3px double #96d4d4;
+  text-align: center;
+  vertical-align: middle;
+}
+.post-body .td-travel-image_1 {
   border: 3px double #96d4d4;
   width: 25%;
+}
+.post-body .td-travel-image_2 {
+  border: 3px double #96d4d4;
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.post-body .travel-imgTag {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 .post-sticky-flag {
   display: inline-block;
@@ -1757,7 +1775,7 @@ pre .javascript .function {
 }
 @media (max-width: 991px) {
   .post-body {
-    text-align: justify;
+    text-align: left;
   }
 }
 .post-body h1,
