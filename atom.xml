@@ -6,7 +6,7 @@
   <link href="https://chris81051.github.io/atom.xml" rel="self"/>
   
   <link href="https://chris81051.github.io/"/>
-  <updated>2025-01-08T01:06:52.000Z</updated>
+  <updated>2025-05-12T13:59:57.000Z</updated>
   <id>https://chris81051.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新北 | 雙溪 | 山區　不厭亭</title>
+    <link href="https://chris81051.github.io/2025/05/12/Travel-New-Taipei-City-Shuangxi-Buyanting/"/>
+    <id>https://chris81051.github.io/2025/05/12/Travel-New-Taipei-City-Shuangxi-Buyanting/</id>
+    <published>2025-05-12T13:59:57.000Z</published>
+    <updated>2025-05-12T13:59:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/hImRXQJ.jpeg" onclick="window.open('http://chris81051.github.io/2025/05/12/Travel-New-Taipei-City-Shuangxi-Buyanting/', '_blank')" title="不厭亭" style="width: 85%; high: 85%; cursor: pointer;"></p><span id="more"></span><p class="travel-image-title">不厭亭　f/1.8　1/7s　ISO-20　by Chris</p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr><p>　　非現況圖，在芒草的季節所拍攝，芒草季節在每年的10月至12月，不厭亭為芒草熱門拍照景點，很喜歡這裡的視野，風景非常地優美，很難得在北部可以看到群山的美景，寂寞公路的展望點，放空的好地方。</p><h3 id="行前概要"><a href="#行前概要" class="headerlink" title="行前概要"></a>行前概要</h3><hr><p>　　上山的路有些許小，需要注意前面的九份路段，有許多遊覽車車體大會吃到對向車車道，開汽車盡量靠同側右邊一點行駛，如果是從九份上來的朋友會遇到塞車，雖然筆者是平日去，觀光的遊客還是非常的多，經過九份後到達目的地差不多快10公里左右，相較於前面塞車花的時間後者還較快抵達，停車的部分在公路旁有些許停車格，也有部分路旁的空地可以停，平日去時幾乎停車格都是空的不用擔心沒車位停，然後沒有洗手間解決，不厭亭的平台風非常的大很冷，上來要注意保暖。</p><h3 id="攝影點"><a href="#攝影點" class="headerlink" title="攝影點"></a>攝影點</h3><hr><p>座標：<a href="https://maps.app.goo.gl/o6t2BtTNEDGYszAy9">25.08923, 121.84752</a><br>街景：無<br>涼亭入口處：<a href="https://maps.app.goo.gl/kutEpU1yT6akprQL9">https://maps.app.goo.gl/kutEpU1yT6akprQL9</a></p><h3 id="停車點"><a href="#停車點" class="headerlink" title="停車點"></a>停車點</h3><hr><p>路邊停車格：<a href="https://maps.app.goo.gl/oDXi3uKDf1sMrD4P8">25.08915, 121.84783</a><br>街景：<a href="https://maps.app.goo.gl/JTHSPHJncNfETyAv5">https://maps.app.goo.gl/JTHSPHJncNfETyAv5</a></p><p>路旁空地：<a href="https://maps.app.goo.gl/NzgPEfdivGwpq3MS6">25.08964, 121.84895</a><br>街景：<a href="https://maps.app.goo.gl/xRhyJnABg82D4q738">https://maps.app.goo.gl/xRhyJnABg82D4q738</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img 
+src=&quot;https://i.imgur.com/hImRXQJ.jpeg&quot; 
+onclick=&quot;window.open(&#39;http://chris81051.github.io/2025/05/12/Travel-New-Taipei-City-Shuangxi-Buyanting/&#39;, &#39;_blank&#39;)&quot; 
+title=&quot;不厭亭&quot; style=&quot;width: 85%; high: 85%; cursor: pointer;&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="新北" scheme="https://chris81051.github.io/categories/%E6%96%B0%E5%8C%97/"/>
+    
+    <category term="雙溪" scheme="https://chris81051.github.io/categories/%E6%96%B0%E5%8C%97/%E9%9B%99%E6%BA%AA/"/>
+    
+    
+    <category term="山區" scheme="https://chris81051.github.io/tags/%E5%B1%B1%E5%8D%80/"/>
+    
+    <category term="芒草" scheme="https://chris81051.github.io/tags/%E8%8A%92%E8%8D%89/"/>
+    
+    <category term="網美" scheme="https://chris81051.github.io/tags/%E7%B6%B2%E7%BE%8E/"/>
+    
+  </entry>
   
   <entry>
     <title>宜蘭 | 頭城 | 夜景　山海明珠</title>
@@ -578,37 +608,6 @@ title=&quot;獅球嶺觀景台&quot; style=&quot;width: 85%; high: 85%; cursor: 
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
     
     <category term="Two Pointers" scheme="https://chris81051.github.io/tags/Two-Pointers/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] 53. Maximum Subarray</title>
-    <link href="https://chris81051.github.io/2023/05/31/LeetCode-53-Maximum-Subarray-Java-Python/"/>
-    <id>https://chris81051.github.io/2023/05/31/LeetCode-53-Maximum-Subarray-Java-Python/</id>
-    <published>2023-05-31T09:27:48.000Z</published>
-    <updated>2023-05-31T09:27:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr><p>　　這題是一個經典的動態規劃問題，目標是找到一個陣列中連續子陣列的合還有回傳最大值，時間複雜度可達 <code>O(n)</code>，這裡有 JAVA 和 Python 的寫法。</p><h3 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h3><hr><blockquote><p>Given an integer array <code>nums</code>, find the subarray with the largest sum, and return its sum.</p></blockquote><blockquote><p>給定一個整數陣列 <code>nums</code> ，找到最大總合的子陣列，然後回傳子陣列的總合。</p></blockquote><p>題目連結：<a href="https://leetcode.com/problems/maximum-subarray/">https://leetcode.com/problems/maximum-subarray/</a></p><h3 id="題目限制"><a href="#題目限制" class="headerlink" title="題目限制"></a>題目限制</h3><hr><p><code>1 &lt;= nums.length &lt;= 105</code><br><code>104 &lt;= nums[i] &lt;= 104</code></p><h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><hr><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [-<span class="number">2</span>,<span class="number">1</span>,-<span class="number">3</span>,<span class="number">4</span>,-<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,-<span class="number">5</span>,<span class="number">4</span>]</span><br><span class="line">Output: <span class="number">6</span></span><br><span class="line">Explanation: The subarray [<span class="number">4</span>,-<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>] has the largest sum <span class="number">6.</span></span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">1</span>]</span><br><span class="line">Output: <span class="number">1</span></span><br><span class="line">Explanation: The subarray [<span class="number">1</span>] has the largest sum <span class="number">1.</span></span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [<span class="number">5</span>,<span class="number">4</span>,-<span class="number">1</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line">Output: <span class="number">23</span></span><br><span class="line">Explanation: The subarray [<span class="number">5</span>,<span class="number">4</span>,-<span class="number">1</span>,<span class="number">7</span>,<span class="number">8</span>] has the largest sum <span class="number">23.</span></span><br></pre></td></tr></table></figure><h3 id="思路-amp-筆記"><a href="#思路-amp-筆記" class="headerlink" title="思路&amp;筆記"></a>思路&amp;筆記</h3><hr><p>直觀的做法是把元素依依累加下去，這也代表為連續的子陣列，然後再將這個子陣列相加的最大數存起來。</p><blockquote><ul><li>遍歷索引累加下去，子陣列的合會越來越大，代表此子陣列的合上限一直在增加。(這樣可以確保當前子陣列的總合是連續的，且是最大的值)</li><li>再來比較子陣列的合跟最大值，更新到最大的值。</li><li>後續要判斷相加的合如果小於 0 的話，重新找子陣列的起點，再依依累加下去。</li><li>因為子陣列的合為負數，表示對後續的合沒有貢獻，將其重置為 0。(假如是負數的話對於子陣列的合會被扣掉)</li></ul></blockquote><h3 id="JAVA-實現"><a href="#JAVA-實現" class="headerlink" title="JAVA 實現"></a>JAVA 實現</h3><hr><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSubArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length; <span class="comment">// 陣列的長度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> Integer.MIN_VALUE; <span class="comment">// 確保整數為最小值 (有可能比0還要小)</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 子陣列的合</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line"></span><br><span class="line">            sum += nums[i]; <span class="comment">// 子陣列的合 + 當下索引的值</span></span><br><span class="line">            max = Math.max(sum,max); <span class="comment">// 子陣列的合、最大值，取比較大的數</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum&lt;<span class="number">0</span>) &#123;</span><br><span class="line">                sum = <span class="number">0</span>; <span class="comment">// 子陣列的合重製為 0</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max; <span class="comment">// 回傳最大值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Python-實現"><a href="#Python-實現" class="headerlink" title="Python 實現"></a>Python 實現</h3><hr><p>使用了和 Java 一樣的邏輯執行，換成 Python 的寫法。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxSubArray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        </span><br><span class="line">        n = <span class="built_in">len</span>(nums) <span class="comment"># 陣列長度</span></span><br><span class="line">        current_sum = <span class="number">0</span> <span class="comment"># 子陣列的合</span></span><br><span class="line">        current_max = <span class="built_in">float</span>(<span class="string">&#x27;-inf&#x27;</span>) <span class="comment"># 確保是最小的整數</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line"></span><br><span class="line">            current_sum += nums[i] <span class="comment"># 子陣列的合 + 當下索引的值</span></span><br><span class="line">            current_max = <span class="built_in">max</span>(current_sum, current_max) <span class="comment"># 子陣列的合、最大值，取比較大的數</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (current_sum&lt;<span class="number">0</span>):  </span><br><span class="line">                current_sum = <span class="number">0</span> <span class="comment"># 子陣列的合重製為 0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> current_max <span class="comment"># 回傳最大數</span></span><br></pre></td></tr></table></figure><h3 id="成績"><a href="#成績" class="headerlink" title="成績"></a>成績</h3><hr><table><thead><tr><th>Language</th><th>Runtime</th><th>Memory</th></tr></thead><tbody><tr><td>Java</td><td>1ms</td><td>59.1MB</td></tr><tr><td>Python</td><td>719ms</td><td>30.6MB</td></tr></tbody></table>]]></content>
-    
-    
-    <summary type="html">這題是一個經典的動態規劃問題，目標是找到一個陣列中連續子陣列的合還有回傳最大值</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://chris81051.github.io/categories/LeetCode/"/>
-    
-    <category term="Array" scheme="https://chris81051.github.io/categories/LeetCode/Array/"/>
-    
-    <category term="Medium" scheme="https://chris81051.github.io/categories/LeetCode/Array/Medium/"/>
-    
-    
-    <category term="Top 100 Liked Questions" scheme="https://chris81051.github.io/tags/Top-100-Liked-Questions/"/>
-    
-    <category term="Java" scheme="https://chris81051.github.io/tags/Java/"/>
-    
-    <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
-    
-    <category term="Dynamic Programming" scheme="https://chris81051.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   
