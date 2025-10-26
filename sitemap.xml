@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chris81051.github.io/travel/index.html</loc>
+    
+    <lastmod>2025-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chris81051.github.io/2025/10/26/Travel-New-Taipei-City-Xizhi-Kezilin-Natural-Swimming-Pool/</loc>
     
     <lastmod>2025-10-26</lastmod>
@@ -14,15 +23,6 @@
     <loc>https://chris81051.github.io/about/index.html</loc>
     
     <lastmod>2025-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chris81051.github.io/travel/index.html</loc>
-    
-    <lastmod>2025-05-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
