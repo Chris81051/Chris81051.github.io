@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffcbaa;
+  background: #aaf2b0;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1604,22 +1604,73 @@ pre .javascript .function {
   text-align: center;
   vertical-align: middle;
 }
-.post-body .td-travel-image_1 {
-  border: 3px double #96d4d4;
-  width: 25%;
+.travel-list-container {
+  display: flex; /* 使用 Flexbox 佈局 */
+  flex-wrap: wrap; /* 允許項目換行 */
+  gap: 20px; /* 項目之間的間距 */
+  justify-content: flex-start; /* 將項目靠左對齊 (flex-start) */
+  margin-bottom: 30px; /* 每個分類區塊下方的間距 */
 }
-.post-body .td-travel-image_2 {
-  border: 3px double #96d4d4;
-  text-align: center;
-  vertical-align: middle;
-  padding-bottom: 0;
-  margin-bottom: 0;
+.travel-item {
+  flex: 0 0 300px;
+  max-width: 320px;
+  width: 100%;
+  text-align: center; /* 將容器內的文字居中，這會影響到圖片標題 */
+  box-sizing: border-box;
+  height: 235px; /* 固定容器高度 */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px; /* 邊框內距*/
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-.post-body .travel-imgTag {
-  cursor: pointer;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+.travel-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+@media (prefers-color-scheme: dark) {
+  .travel-item {
+    border-color: #555;
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  .travel-item:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  }
+}
+.travel-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%; /* 確保連結佔據整個 travel-item 的高度 */
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  justify-content: flex-start; /* <--- 關鍵修正：將內容從頂部開始排列，而非分散對齊 */
+  border-bottom: none; /* 移除連結底線 */
+}
+.travel-list-container .travel-item img {
+  max-width: 100%;
+  height: 160px; /* 固定圖片高度 */
+  display: block;
+  margin-bottom: 11px; /* 圖片下方與標題的固定間距 */
+  border-radius: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+.travel-item a .travel-image-title {
+  font-size: 1.1em;
+  margin-top: auto; /* <--- 自動調整上方外邊距，將其向下推 */
+  margin-bottom: auto; /* <--- 自動調整下方外邊距，將其向上拉，與 margin-top: auto; 共同作用實現垂直置中 */
+  font-weight: bold;
+  color: #333;
+  text-align: center; /* 確保 p 元素內的文字水平居中 */
+}
+@media (prefers-color-scheme: dark) {
+  .travel-item a .travel-image-title {
+    color: #eee;
+  }
 }
 .post-sticky-flag {
   display: inline-block;
@@ -1642,6 +1693,16 @@ pre .javascript .function {
 }
 .use-motion .collection-header {
   opacity: 0;
+}
+@media (max-width: 768px) {
+  .travel-item {
+    flex: 0 0 calc(50% - 10px); /* 50% 寬度減去一半的 gap */
+    max-width: calc(50% - 10px); /* 保持最大寬度一致 */
+    height: 200px; /* 固定容器高度，您可以根據需求調整這個值 */
+  }
+  .travel-item a .travel-image-title {
+    font-size: 1em;
+  }
 }
 .posts-collapse {
   margin-left: 35px;
