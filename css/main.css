@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #46edff;
+  background: #c375ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1605,16 +1605,26 @@ pre .javascript .function {
   vertical-align: middle;
 }
 .travel-list-container {
-  display: flex; /* 使用 Flexbox 佈局 */
-  flex-wrap: wrap; /* 允許項目換行 */
+  display: grid; /* 改用 Grid，用「欄數」控制每行幾個，而非固定寬度 */
+  grid-template-columns: repeat(2, 1fr); /* 預設 2 欄 (小筆電 / 平板) */
   gap: 20px; /* 項目之間的間距 */
-  justify-content: flex-start; /* 將項目靠左對齊 (flex-start) */
   margin-bottom: 30px; /* 每個分類區塊下方的間距 */
+/* 14 吋筆電：1920x1080 @150% 縮放 = 1280px；@125% = 1536px → 3 欄 */
+/* 21.5 吋外接螢幕：1920x1080 @100% 縮放 = 1920px → 4 欄 */
+}
+@media (min-width: 1200px) {
+  .travel-list-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1600px) {
+  .travel-list-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .travel-item {
-  flex: 0 0 300px;
-  max-width: 320px;
-  width: 100%;
+/* 寬度改由 .travel-list-container 的 grid 欄數決定，這裡不再寫死 px */
+  min-width: 0; /* 避免內容(長標題/圖片)把 grid 欄位撐爆 */
   text-align: center; /* 將容器內的文字居中，這會影響到圖片標題 */
   box-sizing: border-box;
   height: 235px; /* 固定容器高度 */
