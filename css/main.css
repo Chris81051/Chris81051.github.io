@@ -1221,7 +1221,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e94b99;
+  background: #a2ff34;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2706,11 +2706,80 @@ ul.breadcrumb li + li:last-child {
     font-size: 1em;
   }
 }
-.post-body .table-travel-image {
-  border: 3px double #96d4d4;
+.post-body .place-card {
+  background-color: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
 }
-.post-body .td-travel-name {
-  border: 3px double #96d4d4;
-  text-align: center;
-  vertical-align: middle;
+@media (prefers-color-scheme: dark) {
+  .post-body .place-card {
+    background-color: #2a2a2a;
+    border-color: #555;
+  }
+}
+.place-card__row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+.place-card__name {
+  font-weight: bold;
+  font-size: 15px;
+}
+.place-card__coord {
+  font-size: 15px;
+  text-decoration: underline;
+  user-select: text;
+}
+.place-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+.post-body .place-btn {
+  align-items: center;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 6px;
+  color: inherit;
+  display: inline-flex;
+  font-size: 14px;
+  justify-content: center;
+  min-height: 20px;
+  padding: 0 12px;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.post-body .place-btn:hover {
+  background-color: rgba(0,0,0,0.05);
+  transform: translateY(-1px);
+}
+.post-body .place-btn.place-btn--nav {
+  background-color: #4285f4;
+  border-color: #4285f4;
+  color: #fff;
+}
+.post-body .place-btn.place-btn--nav:hover {
+  background-color: #3367d6;
+}
+.post-body .place-btn.is-disabled {
+  color: #999;
+  cursor: default;
+  opacity: 0.5;
+}
+.post-body .place-btn.is-disabled:hover {
+  background-color: transparent;
+  transform: none;
+}
+@media (prefers-color-scheme: dark) {
+  .post-body .place-btn {
+    border-color: #555;
+  }
+  .post-body .place-btn:hover {
+    background-color: rgba(255,255,255,0.08);
+  }
 }
