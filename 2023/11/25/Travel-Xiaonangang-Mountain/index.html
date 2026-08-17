@@ -58,6 +58,68 @@
     lang   : 'zh-TW'
   };
 </script>
+<!--
+  自訂的 <head> 內容
+  由 themes/next/_config.yml 的 custom_file_path.head 載入，
+  NexT 用 next_inject('head') 插在 <head> 裡 (themes/next/layout/_layout.swig 第 6 行)。
+  ----------------------------------------------------------
+
+  用途：
+  消除 darkmode 的「開場閃一下淺色」。
+
+  原因：
+  hexo-next-darkmode 的腳本被注入在 </body> 之前，
+  瀏覽器必須先把整頁畫成淺色、再去 CDN 下載 darkmode-js、
+  執行後才加上 class 重繪成深色，中間的空窗期就是那一下閃爍。
+
+  解法：
+  是在這裡用同步腳本搶在「第一次繪製之前」就決定好顏色。
+  這個檔案會先被當成 Nunjucks 樣板處理，所以 JS 裡不能出現
+  「連續兩個左大括號」或「左大括號加百分比」這兩組符號 (含註解裡也不行)，
+  它們會被當成樣板語法去解析，整頁會產出空白檔案。
+
+  備註：
+  屬於部落格 repo，會被 git 追蹤，更新 NexT 主題不會覆蓋。
+-->
+
+
+<script>
+(function () {
+  'use strict';
+
+  // 這裡不能用 document.body —— <head> 執行時 <body> 還沒被解析出來，
+  // 拿到的會是 null。能操作的只有 document.documentElement (也就是 <html>)。
+  var root = document.documentElement;
+
+  // 判斷條件必須跟 darkmode-js 原始碼完全一致，否則兩者結論不同會再閃一次。
+  // 它的邏輯 (src/darkmode.js)：
+  //   localStorage 的 darkmode === 'true'  → 使用者手動選過深色
+  //   localStorage 為 null 且系統偏好深色  → 沒選過，跟隨作業系統
+  // 注意 saveInCookies 這個選項名稱是騙人的，實際用的是 localStorage。
+  var saved = localStorage.getItem('darkmode');
+  var dark = saved === 'true' ||
+             (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  if (dark) root.classList.add('darkmode--activated');
+
+  // darkmode-js 全程只操作 <body> 的 class，不知道 <html> 上也有一份。
+  // 少了下面這段同步，使用者按下按鈕切回淺色時：
+  //   <body> 的 class 被移除 → 但 <html> 的還在 → 畫面卡在深色切不回去。
+  // 所以用 MutationObserver 盯著 body 的 class，把狀態鏡射回 <html>。
+  document.addEventListener('DOMContentLoaded', function () {
+    var sync = function () {
+      root.classList.toggle('darkmode--activated',
+        document.body.classList.contains('darkmode--activated'));
+    };
+
+    sync();   // 先對齊一次，避免 darkmode-js 已經跑完造成兩邊不一致
+    new MutationObserver(sync).observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+})();
+</script>
 
   <title>新北 | 汐止 | 夜景　小南港山 | Chris's Lab</title>
   
@@ -100,7 +162,7 @@
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="Chris's Lab" type="application/atom+xml">
-</head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -624,7 +686,7 @@
 		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
 		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
 		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-		document.getElementById("sitetime").innerHTML=" Chris's Lab 已運行了 "+diffYears+" 年 又 "+diffDays+" 天 ";
+		document.getElementById("sitetime").innerHTML=" Chris's Lab 已上線 "+diffYears+" 年 "+diffDays+" 天 ";
 	}
 	siteTime();
 </script>
@@ -707,6 +769,26 @@
   
 
   
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '90px',
+  right: 'unset',
+  left: '26px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
 
 <script>
   function loadCount() {
