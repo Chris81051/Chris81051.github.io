@@ -1228,7 +1228,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #78427a;
+  background: #49fff2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2629,6 +2629,13 @@ ul.breadcrumb li + li:last-child {
   margin: 0 auto 1px;
   text-align: center;
 }
+:root {
+  --my-card-bg: #d4d4d4;
+}
+html.darkmode--activated,
+body.darkmode--activated {
+  --my-card-bg: #474747;
+}
 .travel-list-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2650,8 +2657,8 @@ ul.breadcrumb li + li:last-child {
   height: 235px;
   min-width: 0;
   text-align: center;
-  background-color: #e8e8e8;
-  border: 1px solid rgba(0,0,0,0.3);
+  background-color: var(--my-card-bg);
+  border: 1px solid rgba(0,0,0,0.669);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   border-radius: 8px;
   overflow: hidden;
@@ -2698,7 +2705,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .post-body .place-card {
-  background-color: #e8e8e8;
+  background-color: var(--my-card-bg);
   border: 1px solid var(--btn-default-border-color);
   border-radius: 8px;
   margin-bottom: 12px;

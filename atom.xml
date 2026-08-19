@@ -89,13 +89,13 @@
     <category term="淡水" scheme="https://chris81051.github.io/categories/%E6%96%B0%E5%8C%97/%E6%B7%A1%E6%B0%B4/"/>
     
     
-    <category term="網美" scheme="https://chris81051.github.io/tags/%E7%B6%B2%E7%BE%8E/"/>
-    
     <category term="雨備" scheme="https://chris81051.github.io/tags/%E9%9B%A8%E5%82%99/"/>
     
     <category term="日式建築" scheme="https://chris81051.github.io/tags/%E6%97%A5%E5%BC%8F%E5%BB%BA%E7%AF%89/"/>
     
     <category term="古蹟" scheme="https://chris81051.github.io/tags/%E5%8F%A4%E8%B9%9F/"/>
+    
+    <category term="網美" scheme="https://chris81051.github.io/tags/%E7%B6%B2%E7%BE%8E/"/>
     
   </entry>
   
@@ -151,9 +151,9 @@
     
     <category term="山區" scheme="https://chris81051.github.io/tags/%E5%B1%B1%E5%8D%80/"/>
     
-    <category term="芒草" scheme="https://chris81051.github.io/tags/%E8%8A%92%E8%8D%89/"/>
-    
     <category term="網美" scheme="https://chris81051.github.io/tags/%E7%B6%B2%E7%BE%8E/"/>
+    
+    <category term="芒草" scheme="https://chris81051.github.io/tags/%E8%8A%92%E8%8D%89/"/>
     
   </entry>
   
@@ -555,9 +555,9 @@
     
     <category term="Python" scheme="https://chris81051.github.io/tags/Python/"/>
     
-    <category term="Recursion" scheme="https://chris81051.github.io/tags/Recursion/"/>
-    
     <category term="DFS" scheme="https://chris81051.github.io/tags/DFS/"/>
+    
+    <category term="Recursion" scheme="https://chris81051.github.io/tags/Recursion/"/>
     
   </entry>
   
