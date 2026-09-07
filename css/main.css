@@ -1228,7 +1228,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b10dff;
+  background: #1144d1;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2944,4 +2944,12 @@ body.darkmode--activated code {
 }
 .post-body .changelog__more[open] .changelog__more-close {
   display: inline;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: var(--body-bg-color);
+  pointer-events: none;
+  z-index: -2;
 }
