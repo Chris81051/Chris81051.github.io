@@ -1228,7 +1228,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fc7f50;
+  background: #cdff3c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2752,6 +2752,9 @@ ul.breadcrumb li + li:last-child {
   height: auto;
   width: 100%;
 }
+.post-body .travel-image-static img {
+  cursor: default;
+}
 .post-body .travel-image-title {
   color: var(--text-color);
   font-size: 15px;
@@ -2785,15 +2788,13 @@ body.darkmode--activated {
 }
 .travel-item {
   box-sizing: border-box;
-  height: 235px;
+  min-height: 235px;
   min-width: 0;
   text-align: center;
   background-color: var(--my-card-bg);
   border: 1px solid rgba(0,0,0,0.669);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   border-radius: 8px;
-  overflow: hidden;
-  padding: 15px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .travel-item:hover {
@@ -2802,15 +2803,17 @@ body.darkmode--activated {
 }
 @media (max-width: 768px) {
   .travel-item {
-    height: 200px;
+    min-height: 200px;
   }
 }
 .travel-item a {
   border-bottom: none;
   color: inherit;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 15px;
   justify-content: flex-start;
   text-decoration: none;
 }
@@ -2959,4 +2962,63 @@ body::before {
   background-color: var(--body-bg-color);
   pointer-events: none;
   z-index: -2;
+}
+.post-body .reading-card {
+  background-color: var(--my-card-bg);
+  border: 1px solid var(--btn-default-border-color);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+}
+.reading-card__title {
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.post-body .reading-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.reading-card__item + .reading-card__item {
+  border-top: 1px solid rgba(128,128,128,0.25);
+}
+.post-body .reading-card__link {
+  border-bottom: 0;
+  color: var(--link-color);
+  display: inline-block;
+  font-size: 15px;
+  padding: 6px 0;
+  word-break: break-word;
+}
+.post-body .reading-card__link:hover {
+  border-bottom: 1px solid var(--link-hover-color);
+  color: var(--link-hover-color);
+}
+.post-body .post-fold {
+  margin: 10px 0 20px;
+}
+.post-body .post-fold > summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  list-style: none;
+  padding: 3px 8px;
+  user-select: none;
+}
+.post-body .post-fold > summary::-webkit-details-marker {
+  display: none;
+}
+.post-body .post-fold > summary::before {
+  content: '▸ ';
+}
+.post-body .post-fold > summary:hover {
+  background-color: rgba(128,128,128,0.15);
+}
+.post-body .post-fold[open] > summary::before {
+  content: '▾ ';
+}
+.post-body .image-spacer {
+  height: 20px;
 }
